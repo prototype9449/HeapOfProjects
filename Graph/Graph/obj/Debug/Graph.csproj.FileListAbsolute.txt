@@ -1,0 +1,6 @@
+c:\documents\visual studio 2013\Projects\Graph\Graph\bin\Debug\Graph.exe.config
+c:\documents\visual studio 2013\Projects\Graph\Graph\bin\Debug\Graph.exe
+c:\documents\visual studio 2013\Projects\Graph\Graph\bin\Debug\Graph.pdb
+c:\documents\visual studio 2013\Projects\Graph\Graph\obj\Debug\Graph.csprojResolveAssemblyReference.cache
+c:\documents\visual studio 2013\Projects\Graph\Graph\obj\Debug\Graph.exe
+c:\documents\visual studio 2013\Projects\Graph\Graph\obj\Debug\Graph.pdb
