@@ -14,45 +14,55 @@ namespace ConsoleLabAVLTree
         static private Random _random = new Random();
         static void Main(string[] args)
         {
-            const int CountNumbers = 10000;
-            var sortedDictionary = new SortedDictionary<int, int>();
-            var tree = new BinaryTree<int,int>();
-            int[] randomNumbers = GenerateRandomNumbers(CountNumbers);
+            //const int CountNumbers = 10000;
+            //var sortedDictionary = new SortedDictionary<int, int>();
+            //var tree = new BinaryTree<int,int>();
+            //int[] randomNumbers = GenerateRandomNumbers(CountNumbers);
 
-           // AddItemsToDictionary(randomNumbers, sortedDictionary);
+            // AddItemsToDictionary(randomNumbers, sortedDictionary);
             //AddItemsInTree(tree, randomNumbers);
             //RemoveItemsInDictionary(sortedDictionary, randomNumbers);
-           // RemoveItemsInTree(tree, randomNumbers);
+            // RemoveItemsInTree(tree, randomNumbers);
 
-            var sampleTree = new BinaryTree<int,int>();
-            var arrayInt = new []{100,200,300};
-            var pairs = new KeyValuePair<int, int>[arrayInt.Length];
-            for (int i = 0; i < arrayInt.Length; i++)
-            {
-                pairs[i] = new KeyValuePair<int, int>(arrayInt[i], arrayInt[i]);
-            }
-            sampleTree.AddRange(pairs);
+            //var sampleTree = new BinaryTree<int,int>();
+            //var arrayInt = new []{100,200,300};
+            //var pairs = new KeyValuePair<int, int>[arrayInt.Length];
+            //for (int i = 0; i < arrayInt.Length; i++)
+            //{
+            //    pairs[i] = new KeyValuePair<int, int>(arrayInt[i], arrayInt[i]);
+            //}
+            //sampleTree.AddRange(pairs);
 
 
-            sampleTree.TreeTraversal = Traversal.Depth;
-            foreach (var i in sampleTree)
-            {
-                Console.WriteLine(i.Key);
-            }
-            Console.WriteLine();
+            //sampleTree.TreeTraversal = Traversal.Depth;
+            //foreach (var i in sampleTree)
+            //{
+            //    Console.WriteLine(i.Key);
+            //}
+            //Console.WriteLine();
 
-            sampleTree.TreeTraversal = Traversal.Width;
-            foreach (var i in sampleTree)
-            {
-                Console.WriteLine(i.Key);
-            }
-            Console.WriteLine();
+            //sampleTree.TreeTraversal = Traversal.Width;
+            //foreach (var i in sampleTree)
+            //{
+            //    Console.WriteLine(i.Key);
+            //}
+            //Console.WriteLine();
+            SubTree<int, int> tree = new SubTree<int, int>(10,10);
+
+            
+            tree.Add(15, 15);
+            tree.Add(5, 5);
+            tree.Add(11, 11);
+
+            tree.RightLeftRotate();
+
+
 
 
             Console.ReadKey();
         }
 
-        private static void RemoveItemsInTree(BinaryTree<int,int> tree, int[] randomNumbers)
+        private static void RemoveItemsInTree(BinaryTree<int, int> tree, int[] randomNumbers)
         {
             Console.WriteLine();
             Console.WriteLine("Remove items in tree");
@@ -78,7 +88,7 @@ namespace ConsoleLabAVLTree
             Console.WriteLine(Stopwatch.GetTimestamp() - currenttamp);
         }
 
-        private static void AddItemsInTree(BinaryTree<int,int> tree, int[] randomNumbers)
+        private static void AddItemsInTree(BinaryTree<int, int> tree, int[] randomNumbers)
         {
             Console.WriteLine();
             Console.WriteLine("Add items in tree");
@@ -87,7 +97,7 @@ namespace ConsoleLabAVLTree
             var pairs = new KeyValuePair<int, int>[randomNumbers.Length];
             for (int i = 0; i < pairs.Length; i++)
             {
-                pairs[i] = new KeyValuePair<int, int>(randomNumbers[i],randomNumbers[i]);
+                pairs[i] = new KeyValuePair<int, int>(randomNumbers[i], randomNumbers[i]);
             }
             tree.AddRange(pairs);
             Console.WriteLine(Stopwatch.GetTimestamp() - currenttamp);
