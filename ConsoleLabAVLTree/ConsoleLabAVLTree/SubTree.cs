@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleLabAVLTree
 {
-    public class SubTree<TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
+    public partial class SubTree<TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
     {
         public SubTree<TKey, TValue> Root { get; private set; }
         public SubTree<TKey, TValue> Left { get; set; }
