@@ -47,10 +47,12 @@ namespace ConsoleLabAVLTree
         {
             if (AddToLeftSubTree(key, value))
             {
+                CalculateHeigh();
                 return true;
             }
             if (AddToRightSubTree(key, value))
             {
+                CalculateHeigh();
                 return true;
             }
             return false;
@@ -66,7 +68,6 @@ namespace ConsoleLabAVLTree
                 if (Left == null)
                 {
                     Left = new SubTree<TKey, TValue>(key, value) { Root = this };
-                    CalculateHeigh();
                 }
                 else
                 {
@@ -95,7 +96,7 @@ namespace ConsoleLabAVLTree
             {
                 heigh = 0;
             }
-            //TryToBalanceSubTree();
+            TryToBalanceSubTree();
         }
         
         private bool AddToRightSubTree(TKey otherKey, TValue otherValue)
@@ -105,7 +106,6 @@ namespace ConsoleLabAVLTree
                 if (Right == null)
                 {
                     Right = new SubTree<TKey, TValue>(otherKey, otherValue) { Root = this };
-                    CalculateHeigh();
                 }
                 else
                 {

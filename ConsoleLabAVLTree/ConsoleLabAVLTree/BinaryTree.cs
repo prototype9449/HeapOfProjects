@@ -27,6 +27,7 @@ namespace ConsoleLabAVLTree
                 if (_head.Add(item.Key, item.Value))
                 {
                     Count++;
+                    while (_head.Root != null) _head = _head.Root;
                 }
             }
         }

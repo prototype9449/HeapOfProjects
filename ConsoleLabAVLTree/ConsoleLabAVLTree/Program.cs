@@ -24,47 +24,29 @@ namespace ConsoleLabAVLTree
             //RemoveItemsInDictionary(sortedDictionary, randomNumbers);
             // RemoveItemsInTree(tree, randomNumbers);
 
-            //var sampleTree = new BinaryTree<int,int>();
-            //var arrayInt = new []{100,200,300};
-            //var pairs = new KeyValuePair<int, int>[arrayInt.Length];
-            //for (int i = 0; i < arrayInt.Length; i++)
-            //{
-            //    pairs[i] = new KeyValuePair<int, int>(arrayInt[i], arrayInt[i]);
-            //}
-            //sampleTree.AddRange(pairs);
+            var sampleTree = new BinaryTree<int, int>();
+            var arrayInt = new[] { 20,10,30,25,40,22,27 };
+            var pairs = new KeyValuePair<int, int>[arrayInt.Length];
+            for (int i = 0; i < arrayInt.Length; i++)
+            {
+                pairs[i] = new KeyValuePair<int, int>(arrayInt[i], arrayInt[i]);
+            }
+            sampleTree.AddRange(pairs);
 
 
-            //sampleTree.TreeTraversal = Traversal.Depth;
-            //foreach (var i in sampleTree)
-            //{
-            //    Console.WriteLine(i.Key);
-            //}
-            //Console.WriteLine();
+            sampleTree.TreeTraversal = Traversal.Depth;
+            foreach (var i in sampleTree)
+            {
+                Console.WriteLine(i.Key);
+            }
+            Console.WriteLine();
 
-            //sampleTree.TreeTraversal = Traversal.Width;
-            //foreach (var i in sampleTree)
-            //{
-            //    Console.WriteLine(i.Key);
-            //}
-            //Console.WriteLine();
-            SubTree<int, int> tree = new SubTree<int, int>(20,20);
-
-
-            
-            tree.Add(10, 10);
-            tree.Add(30, 30);
-            tree.Add(40, 40);
-            tree.Add(25, 25);
-            tree.Add(22, 22);
-            tree.Add(27, 27);
-
-
-
-
-            tree.Right.RightRotate();
-            tree.LeftRotate();
-            
-
+            sampleTree.TreeTraversal = Traversal.Width;
+            foreach (var i in sampleTree)
+            {
+                Console.WriteLine(i.Key);
+            }
+            Console.WriteLine();
 
 
             Console.ReadKey();
