@@ -8,19 +8,37 @@ namespace ConsoleLabAVLTree
 {
     public partial class SubTree<TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
     {
-       
+
         public void SmallRightRotate()
         {
             var mostNode = this;
             var averageNode = this.Left;
+            MakeLeafOfRoot(averageNode);
+
 
             averageNode.Root = Root;
             averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
 
+
             averageNode.CalculateHeigh();
             mostNode.CalculateHeigh();
+        }
+       
+
+        private void MakeLeafOfRoot(SubTree<TKey, TValue> averageNode)
+        {
+            if(Root == null) return;
+
+            if (IsLeft())
+            {
+                Root.Left = averageNode;
+            }
+            if (IsRight())
+            {
+                Root.Right = averageNode;
+            }
         }
 
         public void SmallLeftRotate()
@@ -28,10 +46,13 @@ namespace ConsoleLabAVLTree
             var averageNode = Right;
             var leastNode = this;
 
+            MakeLeafOfRoot(averageNode);
+
             averageNode.Root = Root;
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
             leastNode.Right = null;
+
 
             averageNode.CalculateHeigh();
             leastNode.CalculateHeigh();
@@ -43,6 +64,7 @@ namespace ConsoleLabAVLTree
             var leastNode = Left;
             var averageNode = Left.Right;
 
+            MakeLeafOfRoot(averageNode);
             averageNode.Root = Root;
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
@@ -50,6 +72,8 @@ namespace ConsoleLabAVLTree
             averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
+
+           
 
             averageNode.CalculateHeigh();
             mostNode.CalculateHeigh();
@@ -61,6 +85,7 @@ namespace ConsoleLabAVLTree
             var mostNode = Right;
             var leastNode = this;
             var averageNode = Right.Left;
+            MakeLeafOfRoot(averageNode);
 
             averageNode.Root = Root;
             averageNode.Left = leastNode;
@@ -69,6 +94,8 @@ namespace ConsoleLabAVLTree
             averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
+
+            
 
             averageNode.CalculateHeigh();
             mostNode.CalculateHeigh();
@@ -80,12 +107,19 @@ namespace ConsoleLabAVLTree
             var mostNode = this;
             var leastNode = Left;
             var averageNode = leastNode.Right;
+            MakeLeafOfRoot(leastNode);
 
             mostNode.Left = averageNode;
-            mostNode.Root = leastNode;
             leastNode.Root = Root;
+            mostNode.Root = leastNode;
             leastNode.Right = mostNode;
             averageNode.Root = mostNode;
+
+            
+
+            averageNode.CalculateHeigh();
+            mostNode.CalculateHeigh();
+            leastNode.CalculateHeigh();
         }
 
         public void LeftRotate()
@@ -93,12 +127,17 @@ namespace ConsoleLabAVLTree
             var mostNode = Right;
             var leastNode = this;
             var averageNode = mostNode.Left;
+            MakeLeafOfRoot(mostNode);
 
             mostNode.Root = Root;
             leastNode.Root = mostNode;
             leastNode.Right = averageNode;
             averageNode.Root = leastNode;
             mostNode.Left = leastNode;
+
+            averageNode.CalculateHeigh();
+            mostNode.CalculateHeigh();
+            leastNode.CalculateHeigh();
         }
 
         private void TryToBalanceSubTree()
@@ -119,5 +158,4 @@ namespace ConsoleLabAVLTree
             return heigh;
         }
     }
-
 }

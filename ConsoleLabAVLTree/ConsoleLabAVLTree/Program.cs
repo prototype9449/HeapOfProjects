@@ -47,16 +47,21 @@ namespace ConsoleLabAVLTree
             //    Console.WriteLine(i.Key);
             //}
             //Console.WriteLine();
-            SubTree<int, int> tree = new SubTree<int, int>(5,5);
+            SubTree<int, int> tree = new SubTree<int, int>(20,20);
+
 
             
             tree.Add(10, 10);
-            tree.Add(3, 3);
-            tree.Add(15, 15);
-            tree.Add(8, 8);
+            tree.Add(30, 30);
+            tree.Add(40, 40);
+            tree.Add(25, 25);
+            tree.Add(22, 22);
+            tree.Add(27, 27);
 
 
 
+
+            tree.Right.RightRotate();
             tree.LeftRotate();
             
 

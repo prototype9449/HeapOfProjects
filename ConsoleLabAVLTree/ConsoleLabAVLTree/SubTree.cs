@@ -95,7 +95,7 @@ namespace ConsoleLabAVLTree
             {
                 heigh = 0;
             }
-            TryToBalanceSubTree();
+            //TryToBalanceSubTree();
         }
         
         private bool AddToRightSubTree(TKey otherKey, TValue otherValue)
