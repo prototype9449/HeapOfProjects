@@ -10,19 +10,11 @@ namespace RefactorLibrary
             DaysRented = daysRented;
         }
 
-        public Movie Movie
-        {
-            get; 
-            private set;
-        }
+        public Movie Movie { get; private set; }
 
-        public int DaysRented
-        {
-            get; 
-            private set;
-        }
+        public int DaysRented { get; private set; }
 
-        
+
         internal int GetBonusProfit()
         {
             return Movie.GetBonusProfit(DaysRented);

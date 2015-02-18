@@ -8,97 +8,115 @@ namespace ConsoleLabAVLTree
 {
     public partial class SubTree<TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
     {
-        public void RecalculateBalanceFactor()
-        {
-            _balanceFactor = 0;
-            if (Left != null)
-            {
-                _balanceFactor--;
-                if (Left.IsHaveAnyChild())
-                {
-                    _balanceFactor--;
-                }
-            }
-            if (Rigth != null)
-            {
-                _balanceFactor++;
-                if (Rigth.IsHaveAnyChild())
-                {
-                    _balanceFactor++;
-                }
-            }
-        }
-
-        private bool IsHaveAnyChild()
-        {
-            return Left != null || Rigth != null;
-        }
-        public void LeftLeftRotate()
+       
+        public void SmallRightRotate()
         {
             var mostNode = this;
             var averageNode = this.Left;
 
             averageNode.Root = Root;
-            averageNode.Rigth = mostNode;
+            averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
 
-            averageNode.RecalculateBalanceFactor();
-            mostNode.RecalculateBalanceFactor();
+            averageNode.CalculateHeigh();
+            mostNode.CalculateHeigh();
         }
 
-        public void RightRightRotate()
+        public void SmallLeftRotate()
         {
-            var averageNode = Rigth;
+            var averageNode = Right;
             var leastNode = this;
 
             averageNode.Root = Root;
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
-            leastNode.Rigth = null;
+            leastNode.Right = null;
 
-            averageNode.RecalculateBalanceFactor();
-            leastNode.RecalculateBalanceFactor();
+            averageNode.CalculateHeigh();
+            leastNode.CalculateHeigh();
         }
 
-        public void LeftRightRotate()
+        public void SmallLeftRightRotate()
         {
             var mostNode = this;
             var leastNode = Left;
-            var averageNode = Left.Rigth;
+            var averageNode = Left.Right;
 
             averageNode.Root = Root;
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
-            leastNode.Rigth = null;
-            averageNode.Rigth = mostNode;
+            leastNode.Right = null;
+            averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
 
-            averageNode.RecalculateBalanceFactor();
-            mostNode.RecalculateBalanceFactor();
-            leastNode.RecalculateBalanceFactor();
+            averageNode.CalculateHeigh();
+            mostNode.CalculateHeigh();
+            leastNode.CalculateHeigh();
         }
 
-        
-
-        public void RightLeftRotate()
+        public void SmallRightLeftRotate()
         {
-            var mostNode = Rigth;
+            var mostNode = Right;
             var leastNode = this;
-            var averageNode = Rigth.Left;
+            var averageNode = Right.Left;
 
             averageNode.Root = Root;
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
-            leastNode.Rigth = null;
-            averageNode.Rigth = mostNode;
+            leastNode.Right = null;
+            averageNode.Right = mostNode;
             mostNode.Root = averageNode;
             mostNode.Left = null;
 
-            averageNode.RecalculateBalanceFactor();
-            mostNode.RecalculateBalanceFactor();
-            leastNode.RecalculateBalanceFactor();
+            averageNode.CalculateHeigh();
+            mostNode.CalculateHeigh();
+            leastNode.CalculateHeigh();
+        }
+
+        public void RightRotate()
+        {
+            var mostNode = this;
+            var leastNode = Left;
+            var averageNode = leastNode.Right;
+
+            mostNode.Left = averageNode;
+            mostNode.Root = leastNode;
+            leastNode.Root = Root;
+            leastNode.Right = mostNode;
+            averageNode.Root = mostNode;
+        }
+
+        public void LeftRotate()
+        {
+            var mostNode = Right;
+            var leastNode = this;
+            var averageNode = mostNode.Left;
+
+            mostNode.Root = Root;
+            leastNode.Root = mostNode;
+            leastNode.Right = averageNode;
+            averageNode.Root = leastNode;
+            mostNode.Left = leastNode;
+        }
+
+        private void TryToBalanceSubTree()
+        {
+            var balanceFactor = GetBalanceFactor();
+            if (balanceFactor == 2 || balanceFactor == -2)
+            {
+                throw new Exception("2 or -2");
+            }
+        }
+
+        private int GetBalanceFactor()
+        {
+            if (Left != null && Right != null)
+            {
+                return Left.heigh - Right.heigh;
+            }
+            return heigh;
         }
     }
 

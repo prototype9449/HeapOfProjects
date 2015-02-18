@@ -56,8 +56,9 @@ namespace Graph
             var secondArray = other._vertexDictionary.ToArray();
             for (int i = 0; i < firstArray.Count(); ++i)
             {
-                if ((!firstArray[i].Key.Equals(secondArray[i].Key))
-                    || (!firstArray[i].Value.SequenceEqual(secondArray[i].Value)))
+                var isEqualsOfVertexs = firstArray[i].Key.Equals(secondArray[i].Key);
+                var isEqualsSetVertexs = firstArray[i].Value.SequenceEqual(secondArray[i].Value);
+                if (!isEqualsOfVertexs || !isEqualsSetVertexs)
                     return false;
             }
             return true;
@@ -65,8 +66,8 @@ namespace Graph
 
         public override bool Equals(object obj)
         {
-            var temp = obj as Graph<T>;
-            return temp != null && temp.Equals(this);
+            var otherGraph = obj as Graph<T>;
+            return otherGraph != null && otherGraph.Equals(this);
         }
 
 

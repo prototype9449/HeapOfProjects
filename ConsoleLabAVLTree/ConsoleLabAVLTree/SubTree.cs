@@ -10,7 +10,7 @@ namespace ConsoleLabAVLTree
     {
         public SubTree<TKey, TValue> Root { get; private set; }
         public SubTree<TKey, TValue> Left { get; set; }
-        public SubTree<TKey, TValue> Rigth { get; set; }
+        public SubTree<TKey, TValue> Right { get; set; }
         public TValue Value { get; set; }
         public TKey Key { get; private set; }
         public TValue this[TKey key]
@@ -19,13 +19,15 @@ namespace ConsoleLabAVLTree
             set { GetSubTreeByKey(key).Value = value; }
         }
 
-        public short _balanceFactor;
+        
+
+        public int heigh;
 
         public SubTree(TKey key, TValue value)
         {
             Value = value;
             Key = key;
-            _balanceFactor = 0;
+            heigh = 0;
         }
 
         public bool Contains(TKey key)
@@ -64,10 +66,7 @@ namespace ConsoleLabAVLTree
                 if (Left == null)
                 {
                     Left = new SubTree<TKey, TValue>(key, value) { Root = this };
-                    _balanceFactor--;
-
-                    if (Rigth == null)
-                        ChangeBalanceFactorOfRoot();
+                    CalculateHeigh();
                 }
                 else
                 {
@@ -77,61 +76,44 @@ namespace ConsoleLabAVLTree
             }
             return false;
         }
+
+        private void CalculateHeigh()
+        {
+            if (Left != null && Right != null)
+            {
+                heigh = Math.Max(Left.heigh, Right.heigh) + 1;
+            }
+            else if (Left != null && Right == null)
+            {
+                heigh = Left.heigh + 1;
+            }
+            else if (Left == null && Right != null)
+            {
+                heigh = Right.heigh + 1;
+            }
+            else
+            {
+                heigh = 0;
+            }
+            TryToBalanceSubTree();
+        }
         
         private bool AddToRightSubTree(TKey otherKey, TValue otherValue)
         {
             if (otherKey.CompareTo(Key) == 1)
             {
-                if (Rigth == null)
+                if (Right == null)
                 {
-                    Rigth = new SubTree<TKey, TValue>(otherKey, otherValue) { Root = this };
-                    _balanceFactor++;
-
-                    if (Left == null)
-                        ChangeBalanceFactorOfRoot();
+                    Right = new SubTree<TKey, TValue>(otherKey, otherValue) { Root = this };
+                    CalculateHeigh();
                 }
                 else
                 {
-                    Rigth.Add(otherKey, otherValue);
+                    Right.Add(otherKey, otherValue);
                 }
                 return true;
             }
             return false;
-        }
-        
-
-        private void DecreaseBalanceFactor()
-        {
-            _balanceFactor--;
-            if (_balanceFactor == -2)
-            {
-                throw new Exception("-2");
-            }
-            ChangeBalanceFactorOfRoot();
-        }
-
-        private void IncreaseBalanceFactor()
-        {
-            _balanceFactor++;
-            if (_balanceFactor == 2)
-            {
-                throw new Exception("2");
-            }
-            ChangeBalanceFactorOfRoot();
-        }
-        private void ChangeBalanceFactorOfRoot()
-        {
-            if (Root != null)
-            {
-                if (IsLeft())
-                {
-                    Root.DecreaseBalanceFactor();
-                }
-                else
-                {
-                    Root.IncreaseBalanceFactor();
-                }
-            }
         }
        
 
@@ -151,16 +133,17 @@ namespace ConsoleLabAVLTree
             }
             if (subTree.Key.CompareTo(Key) == 1)
             {
-                if (Rigth == null)
+                if (Right == null)
                 {
-                    Rigth = subTree;
+                    Right = subTree;
                     subTree.Root = this;
                 }
                 else
                 {
-                    Rigth.AddSubTree(subTree);
+                    Right.AddSubTree(subTree);
                 }
             }
+            CalculateHeigh();
         }
 
 
@@ -179,11 +162,11 @@ namespace ConsoleLabAVLTree
                     return Left.GetSubTreeByKey(otherKey);
                 }
             }
-            if (Rigth != null)
+            if (Right != null)
             {
                 if (otherKey.CompareTo(Key) == 1)
                 {
-                    return Rigth.GetSubTreeByKey(otherKey);
+                    return Right.GetSubTreeByKey(otherKey);
                 }
             }
             throw new ArgumentNullException("Value is not found");
@@ -207,34 +190,34 @@ namespace ConsoleLabAVLTree
         }
         private bool DeleteNodeInRight(SubTree<TKey, TValue> deleteNode)
         {
-            if (deleteNode.Rigth != null)
+            if (deleteNode.Right != null)
             {
-                deleteNode.Root.Rigth = deleteNode.Rigth;
-                deleteNode.Rigth.Root = deleteNode.Root;
+                deleteNode.Root.Right = deleteNode.Right;
+                deleteNode.Right.Root = deleteNode.Root;
                 if (deleteNode.Left != null)
                 {
-                    deleteNode.Rigth.AddSubTree(deleteNode.Left);
+                    deleteNode.Right.AddSubTree(deleteNode.Left);
                 }
                 return true;
             }
             if (deleteNode.Left != null)
             {
-                deleteNode.Root.Rigth = deleteNode.Left;
+                deleteNode.Root.Right = deleteNode.Left;
                 deleteNode.Left.Root = deleteNode.Root;
                 return true;
             }
-            deleteNode.Root.Rigth = null;
+            deleteNode.Root.Right = null;
             return false;
         }
         private bool DeleteNodeInLeft(SubTree<TKey, TValue> deleteNode)
         {
-            if (deleteNode.Rigth != null)
+            if (deleteNode.Right != null)
             {
-                deleteNode.Root.Left = deleteNode.Rigth;
-                deleteNode.Rigth.Root = deleteNode.Root;
+                deleteNode.Root.Left = deleteNode.Right;
+                deleteNode.Right.Root = deleteNode.Root;
                 if (deleteNode.Left != null)
                 {
-                    deleteNode.Rigth.AddSubTree(deleteNode.Left);
+                    deleteNode.Right.AddSubTree(deleteNode.Left);
                 }
                 return true;
             }
@@ -250,9 +233,9 @@ namespace ConsoleLabAVLTree
 
         private bool IsRight()
         {
-            if (Root.Rigth == null)
+            if (Root.Right == null)
                 return false;
-            return Root.Rigth.Key.Equals(Key);
+            return Root.Right.Key.Equals(Key);
         }
         private bool IsLeft()
         {
@@ -260,11 +243,5 @@ namespace ConsoleLabAVLTree
                 return false;
             return Root.Left.Key.Equals(Key);
         }
-
-        private bool IsHaveBothChild()
-        {
-            return Left != null && Rigth != null;
-        }
-
     }
 }

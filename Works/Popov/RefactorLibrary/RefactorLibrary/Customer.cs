@@ -12,23 +12,16 @@ namespace RefactorLibrary
             Rentals = new List<Rental>();
         }
 
-        public Customer(string name, List<Rental> rentals) : this(name)
+        public Customer(string name, List<Rental> rentals)
+            : this(name)
         {
             Rentals = rentals;
         }
-        
-        public string Name
-        {
-            get; 
-            set;
-        }
 
-        public List<Rental> Rentals
-        {
-            get; 
-            private set;
-        }
-        
+        public string Name { get; set; }
+
+        public List<Rental> Rentals { get; private set; }
+
         internal double GetTotalCharge()
         {
             return Rentals.Sum(rental => rental.GetCharge());

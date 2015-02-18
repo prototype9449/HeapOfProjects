@@ -99,9 +99,9 @@ namespace ConsoleLabAVLTree
                     {
                         queueNodes.Enqueue(currentElement.Left);
                     }
-                    if (currentElement.Rigth != null)
+                    if (currentElement.Right != null)
                     {
-                        queueNodes.Enqueue(currentElement.Rigth);
+                        queueNodes.Enqueue(currentElement.Right);
                     }
                     yield return new KeyValuePair<TKey, TValue>(currentElement.Key, currentElement.Value);
                 }
@@ -120,9 +120,9 @@ namespace ConsoleLabAVLTree
                 while (stackNodes.Count != 0)
                 {
                     var currentElement = stackNodes.Pop();
-                    if (currentElement.Rigth != null)
+                    if (currentElement.Right != null)
                     {
-                        stackNodes.Push(currentElement.Rigth);
+                        stackNodes.Push(currentElement.Right);
                     }
                     if (currentElement.Left != null)
                     {
