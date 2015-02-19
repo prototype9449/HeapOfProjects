@@ -47,12 +47,12 @@ namespace ConsoleLabAVLTree
         {
             if (AddToLeftSubTree(key, value))
             {
-                CalculateHeigh();
+                CalculateHeighAndBallance();
                 return true;
             }
             if (AddToRightSubTree(key, value))
             {
-                CalculateHeigh();
+                CalculateHeighAndBallance();
                 return true;
             }
             return false;
@@ -78,7 +78,13 @@ namespace ConsoleLabAVLTree
             return false;
         }
 
-        private void CalculateHeigh()
+        private void CalculateHeighAndBallance()
+        {
+            CalculateHight();
+            TryToBalanceSubTree();
+        }
+
+        private void CalculateHight()
         {
             if (Left != null && Right != null)
             {
@@ -96,9 +102,8 @@ namespace ConsoleLabAVLTree
             {
                 heigh = 0;
             }
-            TryToBalanceSubTree();
         }
-        
+
         private bool AddToRightSubTree(TKey otherKey, TValue otherValue)
         {
             if (otherKey.CompareTo(Key) == 1)
@@ -143,7 +148,7 @@ namespace ConsoleLabAVLTree
                     Right.AddSubTree(subTree);
                 }
             }
-            CalculateHeigh();
+            CalculateHeighAndBallance();
         }
 
 
@@ -177,59 +182,182 @@ namespace ConsoleLabAVLTree
             try
             {
                 var deleteNode = GetSubTreeByKey(otherKey);
-                if (deleteNode.IsLeft())
+                if (deleteNode.IsHaveOneChild())
                 {
-                    if (DeleteNodeInLeft(deleteNode)) return true;
+                    DeleteAndTie(deleteNode);
+                    Root.BalanceAllNodeToTheRoot();
+                    return true;
                 }
-                return (DeleteNodeInRight(deleteNode));
+                if (deleteNode.IsNotHaveChild())
+                {
+                    DeleteLeaf(deleteNode);
+                    Root.BalanceAllNodeToTheRoot();
+                    return true;
+                }
+
+                DeleteNodeWithMoving(deleteNode);
+                return true;
             }
             catch (ArgumentNullException)
             {
                 return false;
             }
         }
-        private bool DeleteNodeInRight(SubTree<TKey, TValue> deleteNode)
+
+        private void BalanceAllNodeToTheRoot()
         {
-            if (deleteNode.Right != null)
+            TryToBalanceSubTree();
+            if (Root != null)
             {
-                deleteNode.Root.Right = deleteNode.Right;
-                deleteNode.Right.Root = deleteNode.Root;
+                Root.TryToBalanceSubTree();
+            }
+        }
+
+        private void DeleteLeaf(SubTree<TKey, TValue> deleteNode)
+        {
+            if (deleteNode.IsRight())
+            {
+                deleteNode.Root.Right = null;
+            }
+            else
+            {
+                deleteNode.Root.Left = null;
+            }
+        }
+
+        private bool IsNotHaveChild()
+        {
+            return Left == null && Right == null;
+        }
+
+        private bool IsHaveOneChild()
+        {
+            return Left != null ^ Right != null;
+        }
+
+        private void DeleteNodeWithMoving(SubTree<TKey, TValue> deleteNode)
+        {
+            var hightOfLeftSubTree = deleteNode.Left != null ? deleteNode.Left.heigh : 0;
+            var hightOfRightSubTree = deleteNode.Right != null ? deleteNode.Right.heigh : 0;
+            
+            if (hightOfLeftSubTree > hightOfRightSubTree)
+            {
+                SubTree<TKey, TValue> movingNode = deleteNode.Left;
+                while (movingNode.Right!= null)
+                {
+                    movingNode = movingNode.Right;
+                }
+                movingNode.Root = deleteNode.Root;
+                movingNode.Left = deleteNode.Left;
+                movingNode.Right = deleteNode.Right;
+                Delete(movingNode.Key);
+            }
+            else
+            {
+                SubTree<TKey, TValue> movingNode = deleteNode.Right;
+                while (movingNode.Left != null)
+                {
+                    movingNode = movingNode.Left;
+                }
+                Delete(movingNode.Key);
+                movingNode.Root = deleteNode.Root;
+                movingNode.Left = deleteNode.Left;
+                movingNode.Right = deleteNode.Right;
+                
+            }
+
+        }
+
+        private void DeleteAndTie(SubTree<TKey, TValue> deleteNode)
+        {
+            if (deleteNode.IsLeft())
+            {
                 if (deleteNode.Left != null)
                 {
-                    deleteNode.Right.AddSubTree(deleteNode.Left);
+                    deleteNode.Left.Root = deleteNode.Root;
+                    deleteNode.Root.Left = deleteNode.Left;
+                    return;
                 }
-                return true;
+                if (deleteNode.Right != null)
+                {
+                    deleteNode.Right.Root = deleteNode.Root;
+                    deleteNode.Root.Left = deleteNode.Right;
+                }
             }
-            if (deleteNode.Left != null)
+            else
             {
-                deleteNode.Root.Right = deleteNode.Left;
-                deleteNode.Left.Root = deleteNode.Root;
-                return true;
-            }
-            deleteNode.Root.Right = null;
-            return false;
-        }
-        private bool DeleteNodeInLeft(SubTree<TKey, TValue> deleteNode)
-        {
-            if (deleteNode.Right != null)
-            {
-                deleteNode.Root.Left = deleteNode.Right;
-                deleteNode.Right.Root = deleteNode.Root;
+                if (deleteNode.Right!= null)
+                {
+                    deleteNode.Right.Root = deleteNode.Root;
+                    deleteNode.Root.Right = deleteNode.Right;
+                    return;
+                }
                 if (deleteNode.Left != null)
                 {
-                    deleteNode.Right.AddSubTree(deleteNode.Left);
+                    deleteNode.Left.Root = deleteNode.Root;
+                    deleteNode.Root.Right = deleteNode.Left;
                 }
-                return true;
             }
-            if (deleteNode.Left != null)
-            {
-                deleteNode.Root.Left = deleteNode.Left;
-                deleteNode.Left.Root = deleteNode.Root;
-                return true;
-            }
-            deleteNode.Root.Left = null;
-            return false;
         }
+
+        //public bool Delete(TKey otherKey)
+        //{
+        //    try
+        //    {
+        //        var deleteNode = GetSubTreeByKey(otherKey);
+        //        if (deleteNode.IsLeft())
+        //        {
+        //            if (DeleteNodeInLeft(deleteNode)) return true;
+        //        }
+        //        return (DeleteNodeInRight(deleteNode));
+        //    }
+        //    catch (ArgumentNullException)
+        //    {
+        //        return false;
+        //    }
+        //}
+        //private bool DeleteNodeInRight(SubTree<TKey, TValue> deleteNode)
+        //{
+        //    if (deleteNode.Right != null)
+        //    {
+        //        deleteNode.Root.Right = deleteNode.Right;
+        //        deleteNode.Right.Root = deleteNode.Root;
+        //        if (deleteNode.Left != null)
+        //        {
+        //            deleteNode.Right.AddSubTree(deleteNode.Left);
+        //        }
+        //        return true;
+        //    }
+        //    if (deleteNode.Left != null)
+        //    {
+        //        deleteNode.Root.Right = deleteNode.Left;
+        //        deleteNode.Left.Root = deleteNode.Root;
+        //        return true;
+        //    }
+        //    deleteNode.Root.Right = null;
+        //    return false;
+        //}
+        //private bool DeleteNodeInLeft(SubTree<TKey, TValue> deleteNode)
+        //{
+        //    if (deleteNode.Right != null)
+        //    {
+        //        deleteNode.Root.Left = deleteNode.Right;
+        //        deleteNode.Right.Root = deleteNode.Root;
+        //        if (deleteNode.Left != null)
+        //        {
+        //            deleteNode.Right.AddSubTree(deleteNode.Left);
+        //        }
+        //        return true;
+        //    }
+        //    if (deleteNode.Left != null)
+        //    {
+        //        deleteNode.Root.Left = deleteNode.Left;
+        //        deleteNode.Left.Root = deleteNode.Root;
+        //        return true;
+        //    }
+        //    deleteNode.Root.Left = null;
+        //    return false;
+        //}
 
         private bool IsRight()
         {

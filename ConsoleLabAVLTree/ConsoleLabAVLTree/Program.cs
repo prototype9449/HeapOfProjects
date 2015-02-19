@@ -27,21 +27,32 @@ namespace ConsoleLabAVLTree
             var sampleTree = new BinaryTree<int, int>();
             int keyReadLineInt;
 
-            while (int.TryParse(Console.ReadLine(), out keyReadLineInt))
-            {
-                Console.Clear();
-                sampleTree.Add(keyReadLineInt,keyReadLineInt);
-                Console.WriteLine();
+            //while (int.TryParse(Console.ReadLine(), out keyReadLineInt))
+            //{
+            //    Console.Clear();
+            //    sampleTree.Add(keyReadLineInt,keyReadLineInt);
+            //    Console.WriteLine();
 
-                sampleTree.TreeTraversal = Traversal.Width;
-                foreach (var i in sampleTree)
-                {
-                    Console.WriteLine(i.Key);
-                }
-                Console.WriteLine();
-            }
+            //    sampleTree.TreeTraversal = Traversal.Width;
+            //    foreach (var i in sampleTree)
+            //    {
+            //        Console.WriteLine(i.Key);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine("Please enter node for removing = ");
+            //var node = int.Parse(Console.ReadLine());
+            //sampleTree.Remove(node);
+            //foreach (var i in sampleTree)
+            //{
+            //    Console.WriteLine(i.Key);
+            //}
+            sampleTree.Add(30, 30);
+            sampleTree.Add(40, 40);
+            sampleTree.Add(20, 20);
+            sampleTree.Add(50, 50);
 
-
+            sampleTree.Remove(30);
             
 
 
