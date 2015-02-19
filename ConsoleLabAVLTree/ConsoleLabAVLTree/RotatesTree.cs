@@ -231,6 +231,10 @@ namespace ConsoleLabAVLTree
             {
                 return Right.heigh - Left.heigh;
             }
+            if (Left != null && Right == null)
+            {
+                return -1*heigh;
+            }
             return heigh;
         }
     }

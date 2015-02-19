@@ -25,28 +25,24 @@ namespace ConsoleLabAVLTree
             // RemoveItemsInTree(tree, randomNumbers);
 
             var sampleTree = new BinaryTree<int, int>();
-            var arrayInt = new[] { 20,10,30,25,40,22,27 };
-            var pairs = new KeyValuePair<int, int>[arrayInt.Length];
-            for (int i = 0; i < arrayInt.Length; i++)
+            int keyReadLineInt;
+
+            while (int.TryParse(Console.ReadLine(), out keyReadLineInt))
             {
-                pairs[i] = new KeyValuePair<int, int>(arrayInt[i], arrayInt[i]);
+                Console.Clear();
+                sampleTree.Add(keyReadLineInt,keyReadLineInt);
+                Console.WriteLine();
+
+                sampleTree.TreeTraversal = Traversal.Width;
+                foreach (var i in sampleTree)
+                {
+                    Console.WriteLine(i.Key);
+                }
+                Console.WriteLine();
             }
-            sampleTree.AddRange(pairs);
 
 
-            sampleTree.TreeTraversal = Traversal.Depth;
-            foreach (var i in sampleTree)
-            {
-                Console.WriteLine(i.Key);
-            }
-            Console.WriteLine();
-
-            sampleTree.TreeTraversal = Traversal.Width;
-            foreach (var i in sampleTree)
-            {
-                Console.WriteLine(i.Key);
-            }
-            Console.WriteLine();
+            
 
 
             Console.ReadKey();
