@@ -154,6 +154,9 @@ namespace ConsoleLabAVLTree
             if (_head.Delete(key))
             {
                 Count--;
+                while (_head.Root != null) _head = _head.Root;
+                if (_head.Right != null) _head = _head.Right.Root;
+                if (_head.Left != null) _head = _head.Left.Root;
                 return true;
             }
             return false;

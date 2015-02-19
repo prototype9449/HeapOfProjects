@@ -51,6 +51,10 @@ namespace ConsoleLabAVLTree
             sampleTree.Add(40, 40);
             sampleTree.Add(20, 20);
             sampleTree.Add(50, 50);
+            sampleTree.Add(10, 10);
+            sampleTree.Add(25, 25);
+            sampleTree.Add(35, 35);
+            sampleTree.Add(27, 27);
 
             sampleTree.Remove(30);
             

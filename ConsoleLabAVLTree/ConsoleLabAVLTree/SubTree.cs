@@ -185,13 +185,13 @@ namespace ConsoleLabAVLTree
                 if (deleteNode.IsHaveOneChild())
                 {
                     DeleteAndTie(deleteNode);
-                    Root.BalanceAllNodeToTheRoot();
+                    deleteNode.Root.BalanceAllNodeToTheRoot();
                     return true;
                 }
                 if (deleteNode.IsNotHaveChild())
                 {
                     DeleteLeaf(deleteNode);
-                    Root.BalanceAllNodeToTheRoot();
+                    deleteNode.Root.BalanceAllNodeToTheRoot();
                     return true;
                 }
 
@@ -247,10 +247,8 @@ namespace ConsoleLabAVLTree
                 {
                     movingNode = movingNode.Right;
                 }
-                movingNode.Root = deleteNode.Root;
-                movingNode.Left = deleteNode.Left;
-                movingNode.Right = deleteNode.Right;
-                Delete(movingNode.Key);
+
+                ChangeAndDelete(deleteNode, movingNode);
             }
             else
             {
@@ -259,17 +257,40 @@ namespace ConsoleLabAVLTree
                 {
                     movingNode = movingNode.Left;
                 }
-                Delete(movingNode.Key);
-                movingNode.Root = deleteNode.Root;
-                movingNode.Left = deleteNode.Left;
-                movingNode.Right = deleteNode.Right;
-                
+
+                ChangeAndDelete(deleteNode, movingNode);
             }
 
         }
 
+        private void ChangeAndDelete(SubTree<TKey, TValue> deleteNode, SubTree<TKey, TValue> movingNode)
+        {
+            DeleteAndTie(movingNode);
+            movingNode.Root = deleteNode.Root;
+            if (deleteNode.Root != null)
+            {
+                if (deleteNode.IsLeft())
+                {
+                    deleteNode.Root.Left = movingNode;
+                }
+                else
+                {
+                    deleteNode.Root.Right = movingNode;
+                }
+            }
+            movingNode.Left = deleteNode.Left;
+            deleteNode.Left.Root = movingNode;
+
+            movingNode.Right = deleteNode.Right;
+            deleteNode.Right.Root = movingNode;
+        }
+
         private void DeleteAndTie(SubTree<TKey, TValue> deleteNode)
         {
+            if (deleteNode.heigh == 0)
+            {
+                DeleteLeaf(deleteNode);
+            }
             if (deleteNode.IsLeft())
             {
                 if (deleteNode.Left != null)
