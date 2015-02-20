@@ -191,7 +191,10 @@ namespace ConsoleLabAVLTree
                 if (deleteNode.IsNotHaveChild())
                 {
                     DeleteLeaf(deleteNode);
-                    deleteNode.Root.BalanceAllNodeToTheRoot();
+                    if (deleteNode.Root != null)
+                    {
+                        deleteNode.Root.BalanceAllNodeToTheRoot();
+                    }
                     return true;
                 }
 
@@ -215,6 +218,11 @@ namespace ConsoleLabAVLTree
 
         private void DeleteLeaf(SubTree<TKey, TValue> deleteNode)
         {
+            if (deleteNode.Root == null)
+            {
+                deleteNode = null;
+                return;
+            }
             if (deleteNode.IsRight())
             {
                 deleteNode.Root.Right = null;

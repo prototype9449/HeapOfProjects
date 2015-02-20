@@ -16,11 +16,26 @@ namespace ConsoleLabAVLTree
     {
         private SubTree<TKey, TValue> _head;
 
+        public BinaryTree()
+        {
+            Count = 0;
+        }
+        public BinaryTree(TKey key, TValue value)
+        {
+            Add(key, value);
+        }
+        
+
+        public int Count { get; private set; }
+        public bool IsReadOnly { get; private set; }
+        public Traversal TreeTraversal { get; set; }
+
         public void Add(KeyValuePair<TKey, TValue> item)
         {
             if (_head == null)
             {
                 _head = new SubTree<TKey, TValue>(item.Key,item.Value);
+                Count = 1;
             }
             else
             {
@@ -30,6 +45,10 @@ namespace ConsoleLabAVLTree
                     while (_head.Root != null) _head = _head.Root;
                 }
             }
+        }
+        public void Add(TKey key, TValue value)
+        {
+            Add(new KeyValuePair<TKey, TValue>(key, value));
         }
 
         public void Clear()
@@ -59,10 +78,7 @@ namespace ConsoleLabAVLTree
         }
 
 
-        public int Count { get; private set; }
-        public bool IsReadOnly { get; private set; }
-
-        public Traversal TreeTraversal { get; set; }
+       
         
 
         public void AddRange(KeyValuePair<TKey, TValue>[] elements)
@@ -144,13 +160,12 @@ namespace ConsoleLabAVLTree
             return _head.Contains(key);
         }
 
-        public void Add(TKey key, TValue value)
-        {
-            Add(new KeyValuePair<TKey, TValue>(key, value));
-        }
+        
 
         public bool Remove(TKey key)
         {
+            if (_head == null)
+                return false;
             if (_head.Delete(key))
             {
                 Count--;
