@@ -42,7 +42,7 @@ namespace ConsoleLabAVLTree
                 if (_head.Add(item.Key, item.Value))
                 {
                     Count++;
-                    while (_head.Root != null) _head = _head.Root;
+                    RefreshHead();
                 }
             }
         }
@@ -66,6 +66,66 @@ namespace ConsoleLabAVLTree
         {
             throw new NotImplementedException();
         }
+        public bool Remove(TKey key)
+        {
+            if (_head == null)
+                return false;
+
+            if (_head.Key.Equals(key))
+            {
+                RemoveHead();
+                return true;
+            }
+            if (_head.Delete(key))
+            {
+                Count--;
+                RefreshHead();
+                return true;
+            }
+            return false;
+        }
+
+        private void RefreshHead()
+        {
+            while (_head.Root != null) _head = _head.Root;
+            if (_head.Right != null) _head = _head.Right.Root;
+            if (_head.Left != null) _head = _head.Left.Root;
+        }
+
+        private void RemoveHead()
+        {
+            var hightOfLeftSubTree = _head.Left != null ? _head.Left.Heigh : 0;
+            var hightOfRightSubTree = _head.Right != null ? _head.Right.Heigh : 0;
+            if (_head.Right == null && _head.Left == null)
+            {
+                _head = null;
+                Count = 0;
+                return;
+            }
+
+            if (hightOfLeftSubTree > hightOfRightSubTree)
+            {
+                SubTree<TKey, TValue> movingNode = _head.Left;
+                while (movingNode.Right != null)
+                {
+                    movingNode = movingNode.Right;
+                }
+
+                ActionWithNode<TKey, TValue>.ChangeAndDelete(_head, movingNode);
+                _head = movingNode;
+            }
+            else
+            {
+                SubTree<TKey, TValue> movingNode = _head.Right;
+                while (movingNode.Left != null)
+                {
+                    movingNode = movingNode.Left;
+                }
+                ActionWithNode<TKey, TValue>.ChangeAndDelete(_head, movingNode);
+                _head = movingNode;
+            }
+            Count--;
+        }
 
         public bool Remove(KeyValuePair<TKey, TValue> item)
         {
@@ -77,9 +137,32 @@ namespace ConsoleLabAVLTree
             return false;
         }
 
+        public bool ContainsKey(TKey key)
+        {
+            return _head.Contains(key);
+        }
 
-       
-        
+
+
+        public bool TryGetValue(TKey key, out TValue value)
+        {
+            try
+            {
+                value = _head[key];
+                return true;
+            }
+            catch (ArgumentNullException)
+            {
+                value = default(TValue);
+                return false;
+            }
+        }
+
+        public TValue this[TKey key]
+        {
+            get { return _head[key]; }
+            set { _head[key] = value; }
+        }
 
         public void AddRange(KeyValuePair<TKey, TValue>[] elements)
         {
@@ -155,47 +238,7 @@ namespace ConsoleLabAVLTree
             return GetEnumerator();
         }
 
-        public bool ContainsKey(TKey key)
-        {
-            return _head.Contains(key);
-        }
-
         
-
-        public bool Remove(TKey key)
-        {
-            if (_head == null)
-                return false;
-            if (_head.Delete(key))
-            {
-                Count--;
-                while (_head.Root != null) _head = _head.Root;
-                if (_head.Right != null) _head = _head.Right.Root;
-                if (_head.Left != null) _head = _head.Left.Root;
-                return true;
-            }
-            return false;
-        }
-
-        public bool TryGetValue(TKey key, out TValue value)
-        {
-            try
-            {
-                value = _head[key];
-                return true;
-            }
-            catch (ArgumentNullException)
-            {
-                value = default(TValue);
-                return false;
-            }
-        }
-
-        public TValue this[TKey key]
-        {
-            get { return _head[key]; }
-            set { _head[key] = value; }
-        }
 
         public ICollection<TKey> Keys { get; private set; }
         public ICollection<TValue> Values { get; private set; }

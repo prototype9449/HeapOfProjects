@@ -24,7 +24,7 @@ namespace ConsoleLabAVLTree
             mostNode.CalculateHeighAndBallance();
         }
 
-        private void MakeLeafOfRoot(SubTree<TKey, TValue> averageNode)
+        protected void MakeLeafOfRoot(SubTree<TKey, TValue> averageNode)
         {
             if (Root == null) return;
 
@@ -141,12 +141,12 @@ namespace ConsoleLabAVLTree
             leastNode.CalculateHeighAndBallance();
         }
 
-        private List<int> GetBalanceFactors()
+        public List<int> GetBalanceFactors()
         {
             return GetBalanceFactorsRecursiv(new List<int>());
         }
 
-        private List<int> GetBalanceFactorsRecursiv(List<int> balances)
+        public List<int> GetBalanceFactorsRecursiv(List<int> balances)
         {
             var balanceFactor = GetBalanceFactor();
             balances.Add(balanceFactor);
@@ -156,8 +156,8 @@ namespace ConsoleLabAVLTree
             }
             return GetBalanceFactorsRecursiv(balances);
         }
-        
-        private void TryToBalanceSubTree()
+
+        public void TryToBalanceSubTree()
         {
             CalculateHight();
             var balanceFactor = GetBalanceFactor();
@@ -173,7 +173,7 @@ namespace ConsoleLabAVLTree
                     balanceFactorOfSecondNode = Right.GetBalanceFactor();
                 }
 
-                if (heigh == 2)
+                if (Heigh == 2)
                 {
                     SmallRotateSubTree(balanceFactor, balanceFactorOfSecondNode);
                 }
@@ -184,7 +184,7 @@ namespace ConsoleLabAVLTree
             }
         }
 
-        private void BigRotateSubTree(int firstBalanceFactor, int secondBalanceFactor)
+        public void BigRotateSubTree(int firstBalanceFactor, int secondBalanceFactor)
         {
             if (firstBalanceFactor == -2 && secondBalanceFactor == 1)
             {
@@ -206,7 +206,7 @@ namespace ConsoleLabAVLTree
             }
         }
 
-        private void SmallRotateSubTree(int firstBalanceFactor, int secondBalanceFactor)
+        public void SmallRotateSubTree(int firstBalanceFactor, int secondBalanceFactor)
         {
             if (firstBalanceFactor == -2 && secondBalanceFactor == 1)
             {
@@ -226,17 +226,17 @@ namespace ConsoleLabAVLTree
             } 
         }
 
-        private int GetBalanceFactor()
+        public int GetBalanceFactor()
         {
             if (Left != null && Right != null)
             {
-                return Right.heigh - Left.heigh;
+                return Right.Heigh - Left.Heigh;
             }
             if (Left != null && Right == null)
             {
-                return -1*heigh;
+                return -1*Heigh;
             }
-            return heigh;
+            return Heigh;
         }
     }
 }

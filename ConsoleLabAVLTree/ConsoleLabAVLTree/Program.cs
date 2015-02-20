@@ -14,53 +14,52 @@ namespace ConsoleLabAVLTree
         static private Random _random = new Random();
         static void Main(string[] args)
         {
-            //const int CountNumbers = 10000;
-            //var sortedDictionary = new SortedDictionary<int, int>();
-            //var tree = new BinaryTree<int,int>();
-            //int[] randomNumbers = GenerateRandomNumbers(CountNumbers);
+            const int CountNumbers = 10000;
+            var sortedDictionary = new SortedDictionary<int, int>();
+            var tree = new BinaryTree<int, int>();
+            int[] randomNumbers = GenerateRandomNumbers(CountNumbers);
 
-            // AddItemsToDictionary(randomNumbers, sortedDictionary);
+            //AddItemsToDictionary(randomNumbers, sortedDictionary);
             //AddItemsInTree(tree, randomNumbers);
             //RemoveItemsInDictionary(sortedDictionary, randomNumbers);
-            // RemoveItemsInTree(tree, randomNumbers);
+            //RemoveItemsInTree(tree, randomNumbers);
 
             var sampleTree = new BinaryTree<int, int>();
             int keyReadLineInt;
 
-            //while (int.TryParse(Console.ReadLine(), out keyReadLineInt))
-            //{
-            //    Console.Clear();
-            //    sampleTree.Add(keyReadLineInt,keyReadLineInt);
-            //    Console.WriteLine();
+            while (int.TryParse(Console.ReadLine(), out keyReadLineInt))
+            {
+                Console.Clear();
+                sampleTree.Add(keyReadLineInt, keyReadLineInt);
+                Console.WriteLine();
 
-            //    sampleTree.TreeTraversal = Traversal.Width;
-            //    foreach (var i in sampleTree)
-            //    {
-            //        Console.WriteLine(i.Key);
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine("Please enter node for removing = ");
-            //var node = int.Parse(Console.ReadLine());
-            //sampleTree.Remove(node);
-            //foreach (var i in sampleTree)
-            //{
-            //    Console.WriteLine(i.Key);
-            //}
-            sampleTree.Add(30, 30);
-            sampleTree.Add(40, 40);
-            sampleTree.Add(20, 20);
-            sampleTree.Add(50, 50);
-            sampleTree.Add(10, 10);
-            sampleTree.Add(25, 25);
-            sampleTree.Add(35, 35);
-            sampleTree.Add(27, 27);
+                PritnToConsole(sampleTree);
+            }
+            Console.Write("Please enter node for removing = ");
+            var node = int.Parse(Console.ReadLine());
 
-            sampleTree.Remove(30);
-            
+            sampleTree.Remove(node);
+            PritnToConsole(sampleTree);
 
-
+            Console.WriteLine("The end");
             Console.ReadKey();
+        }
+
+        private static void PritnToConsole(BinaryTree<int, int> sampleTree)
+        {
+            Console.WriteLine();
+            sampleTree.TreeTraversal = Traversal.Width;
+            var privousNode = sampleTree.First();
+            foreach (var item in sampleTree)
+            {
+                if (item.Key < privousNode.Key)
+                {
+                    Console.WriteLine();
+                }
+                Console.WriteLine(item.Key);
+                privousNode = item;
+            }
+            Console.WriteLine();
         }
 
         private static void RemoveItemsInTree(BinaryTree<int, int> tree, int[] randomNumbers)
@@ -69,7 +68,7 @@ namespace ConsoleLabAVLTree
             Console.WriteLine("Remove items in tree");
             var currenttamp = Stopwatch.GetTimestamp();
             Stopwatch.StartNew();
-            for (int i = 1; i < 10000; i++)
+            for (int i = 5000; i < 7000; i++)
             {
                 tree.Remove(randomNumbers[i]);
             }
@@ -95,12 +94,11 @@ namespace ConsoleLabAVLTree
             Console.WriteLine("Add items in tree");
             var currenttamp = Stopwatch.GetTimestamp();
             Stopwatch.StartNew();
-            var pairs = new KeyValuePair<int, int>[randomNumbers.Length];
-            for (int i = 0; i < pairs.Length; i++)
+
+            foreach (var number in randomNumbers)
             {
-                pairs[i] = new KeyValuePair<int, int>(randomNumbers[i], randomNumbers[i]);
+                tree.Add(number,number);
             }
-            tree.AddRange(pairs);
             Console.WriteLine(Stopwatch.GetTimestamp() - currenttamp);
         }
 
