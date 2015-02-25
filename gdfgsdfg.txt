@@ -1,4 +1,8 @@
 fasd fasd f
 то то и то то сделал
 This file is for change
+<<<<<<< HEAD
 File ssss
+=======
+File is changed
+>>>>>>> MyBranch

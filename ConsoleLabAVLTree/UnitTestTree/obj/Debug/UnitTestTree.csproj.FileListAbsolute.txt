@@ -1,0 +1,7 @@
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\bin\Debug\UnitTestTree.dll
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\bin\Debug\UnitTestTree.pdb
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\bin\Debug\ConsoleLabAVLTree.exe
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\bin\Debug\ConsoleLabAVLTree.pdb
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\obj\Debug\UnitTestTree.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\obj\Debug\UnitTestTree.dll
+E:\MyRepozitoryGitHub\ConsoleLabAVLTree\UnitTestTree\obj\Debug\UnitTestTree.pdb
