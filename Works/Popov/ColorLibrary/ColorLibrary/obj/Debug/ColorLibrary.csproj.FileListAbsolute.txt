@@ -1,0 +1,5 @@
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorLibrary\bin\Debug\ColorLibrary.dll
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorLibrary\bin\Debug\ColorLibrary.pdb
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorLibrary\obj\Debug\ColorLibrary.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorLibrary\obj\Debug\ColorLibrary.dll
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorLibrary\obj\Debug\ColorLibrary.pdb

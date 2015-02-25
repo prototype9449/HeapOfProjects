@@ -1,0 +1,7 @@
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\bin\Debug\ColorWork.dll
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\bin\Debug\ColorWork.pdb
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\bin\Debug\ColorLibrary.dll
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\bin\Debug\ColorLibrary.pdb
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\obj\Debug\ColorWork.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\obj\Debug\ColorWork.dll
+E:\MyRepozitoryGitHub\Works\Popov\ColorLibrary\ColorWork\obj\Debug\ColorWork.pdb
