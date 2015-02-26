@@ -1,7 +1,0 @@
-E:\educationrepo\educationProject\UnitTest\bin\Debug\UnitTest.dll
-E:\educationrepo\educationProject\UnitTest\bin\Debug\UnitTest.pdb
-E:\educationrepo\educationProject\UnitTest\bin\Debug\LessonLib.dll
-E:\educationrepo\educationProject\UnitTest\bin\Debug\LessonLib.pdb
-E:\educationrepo\educationProject\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
-E:\educationrepo\educationProject\UnitTest\obj\Debug\UnitTest.dll
-E:\educationrepo\educationProject\UnitTest\obj\Debug\UnitTest.pdb

@@ -1,7 +1,0 @@
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\bin\Debug\UnitTestGraph.dll
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\bin\Debug\UnitTestGraph.pdb
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\bin\Debug\Graph.exe
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\bin\Debug\Graph.pdb
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\obj\Debug\UnitTestGraph.csprojResolveAssemblyReference.cache
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\obj\Debug\UnitTestGraph.dll
-E:\MyRepozitoryGitHub\Works\Popov\Graph\UnitTestGraph\obj\Debug\UnitTestGraph.pdb

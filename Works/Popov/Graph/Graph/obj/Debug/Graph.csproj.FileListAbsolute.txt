@@ -1,6 +1,0 @@
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\bin\Debug\Graph.exe.config
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\bin\Debug\Graph.exe
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\bin\Debug\Graph.pdb
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\obj\Debug\Graph.csprojResolveAssemblyReference.cache
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\obj\Debug\Graph.exe
-E:\MyRepozitoryGitHub\Works\Popov\Graph\Graph\obj\Debug\Graph.pdb
