@@ -3,5 +3,5 @@ Qeee
 то то и то то сделал
 Master commit branch
 This file is for change
-He man
+He man master
 File is changed
