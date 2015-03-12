@@ -12,30 +12,24 @@ namespace ConsoleLabAVLTree
         public void SmallRightRotate()
         {
             var mostNode = this;
-            var averageNode = this.Left;
-            MakeLeafOfRoot(averageNode);
+            var averageNode = Left;
 
+            MakeLeafOfRoot(averageNode);
             averageNode.Root = Root;
+
+            if (averageNode.Right != null)
+            {
+                averageNode.Right.Root = mostNode;
+                
+            }
+            mostNode.Left = averageNode.Right;
+
             averageNode.Right = mostNode;
             mostNode.Root = averageNode;
-            mostNode.Left = null;
 
-            averageNode.CalculateHeighAndBallance();
             mostNode.CalculateHeighAndBallance();
-        }
-
-        protected void MakeLeafOfRoot(SubTree<TKey, TValue> averageNode)
-        {
-            if (Root == null) return;
-
-            if (IsLeft())
-            {
-                Root.Left = averageNode;
-            }
-            if (IsRight())
-            {
-                Root.Right = averageNode;
-            }
+            averageNode.CalculateHeighAndBallance();
+            
         }
 
         public void SmallLeftRotate()
@@ -44,16 +38,40 @@ namespace ConsoleLabAVLTree
             var leastNode = this;
 
             MakeLeafOfRoot(averageNode);
-
             averageNode.Root = Root;
+
+            if (averageNode.Left != null)
+            {
+                averageNode.Left.Root = leastNode;
+
+            }
+            leastNode.Right = averageNode.Left;
+
             averageNode.Left = leastNode;
             leastNode.Root = averageNode;
-            leastNode.Right = null;
 
-            averageNode.CalculateHeighAndBallance();
             leastNode.CalculateHeighAndBallance();
+            averageNode.CalculateHeighAndBallance();
+
         }
 
+        /// <summary>
+        /// Make moving element a left of right child's root of this element
+        /// </summary>
+        /// <param name="movingElement"></param>
+        protected void MakeLeafOfRoot(SubTree<TKey, TValue> movingElement)
+        {
+            if (Root == null) return;
+
+            if (IsLeft())
+            {
+                Root.Left = movingElement;
+            }
+            if (IsRight())
+            {
+                Root.Right = movingElement;
+            }
+        }
         public void SmallLeftRightRotate()
         {
             var mostNode = this;
@@ -188,7 +206,7 @@ namespace ConsoleLabAVLTree
         {
             if (firstBalanceFactor == -2 && secondBalanceFactor == 1)
             {
-                Left.LeftRotate();
+                Left.SmallLeftRotate();
                 RightRotate();
             }
             if (firstBalanceFactor == -2 && secondBalanceFactor == -1)
@@ -212,18 +230,18 @@ namespace ConsoleLabAVLTree
             {
                 SmallLeftRightRotate();
             }
-            if (firstBalanceFactor == -2 && secondBalanceFactor == -1)
+            if (firstBalanceFactor == -2 && secondBalanceFactor <= 0)
             {
                 SmallRightRotate();
             }
-            if (firstBalanceFactor == 2 && secondBalanceFactor == 1)
+            if (firstBalanceFactor == 2 && secondBalanceFactor >= 0)
             {
                 SmallLeftRotate();
             }
             if (firstBalanceFactor == 2 && secondBalanceFactor == -1)
             {
                 SmallRightLeftRotate();
-            } 
+            }
         }
 
         public int GetBalanceFactor()
@@ -234,9 +252,13 @@ namespace ConsoleLabAVLTree
             }
             if (Left != null && Right == null)
             {
-                return -1*Heigh;
+                return -1 * Left.Heigh - 1;
             }
-            return Heigh;
+            if (Left == null && Right != null)
+            {
+                return Right.Heigh + 1;
+            }
+            return 0;
         }
     }
 }

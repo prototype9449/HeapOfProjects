@@ -19,11 +19,17 @@ namespace ConsoleLabAVLTree
             var tree = new BinaryTree<int, int>();
             int[] randomNumbers = GenerateRandomNumbers(CountNumbers);
 
-            //AddItemsToDictionary(randomNumbers, sortedDictionary);
-            //AddItemsInTree(tree, randomNumbers);
-            //RemoveItemsInDictionary(sortedDictionary, randomNumbers);
-            //RemoveItemsInTree(tree, randomNumbers);
+            AddItemsToDictionary(randomNumbers, sortedDictionary);
+            AddItemsInTree(tree, randomNumbers);
+            RemoveItemsInDictionary(sortedDictionary, randomNumbers);
+            RemoveItemsInTree(tree, randomNumbers);
 
+            //ActionsWithTree();
+            Console.ReadKey();
+        }
+
+        private static void ActionsWithTree()
+        {
             var sampleTree = new BinaryTree<int, int>();
             int keyReadLineInt;
 
@@ -42,7 +48,6 @@ namespace ConsoleLabAVLTree
             PritnToConsole(sampleTree);
 
             Console.WriteLine("The end");
-            Console.ReadKey();
         }
 
         private static void PritnToConsole(BinaryTree<int, int> sampleTree)

@@ -13,7 +13,7 @@ namespace ConsoleLabAVLTree
         public SubTree<TKey, TValue> Right { get; set; }
         public TValue Value { get; set; }
         public TKey Key { get; protected set; }
-        
+
 
         public TValue this[TKey key]
         {
@@ -22,7 +22,7 @@ namespace ConsoleLabAVLTree
         }
 
         public int Heigh;
-        
+
 
         public SubTree(TKey key, TValue value)
         {
