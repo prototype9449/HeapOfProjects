@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LessonInfo.cs" />
+    <Compile Include="LessonInfoId.cs" />
     <Compile Include="LessonsDal.cs" />
+    <Compile Include="LessonsInfoData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -28,7 +28,7 @@ namespace educationProject
 
             NameLessonForSaveTextBox.Text = _lesson.Title;
             ElementPanel.Opacity = 0.8;
-            ElementPanel.Effect = new BlurEffect {Radius = 5};
+            ElementPanel.Effect = new BlurEffect { Radius = 5 };
             SaveLessonPanel.Visibility = Visibility.Visible;
         }
 
@@ -41,56 +41,48 @@ namespace educationProject
 
         private void NameLessonForSaveButtonOK_Click(object sender, RoutedEventArgs e)
         {
-             _lesson.ClearData();
+            _lesson.ClearData();
 
-                foreach (var grid in ElementPanel.Children)
+            foreach (var grid in ElementPanel.Children)
+            {
+                RefreshUpdatedRightAnswers(grid);
+
+                var gridControl = grid as IGettingData;
+                if (gridControl != null)
                 {
-                    RefreshUpdatedRightAnswers(grid);
-
-                    var gridControl = grid as IGettingData;
-                    if (gridControl != null)
-                    {
-                        _lesson.AddDataItem(gridControl.GetData());
-                    }
+                    _lesson.AddDataItem(gridControl.GetData());
                 }
+            }
 
-                var path = ViewWindowCreateSection.Tag + "/" + NameLessonForSaveTextBox.Text + ".dat";
-                var formatter = new BinaryFormatter();
+            var path = ViewWindowCreateSection.Tag + "/" + NameLessonForSaveTextBox.Text + ".dat";
+            var formatter = new BinaryFormatter();
 
-                using (var fStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    formatter.Serialize(fStream, _lesson);
-                }
+            using (var fStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                formatter.Serialize(fStream, _lesson);
+            }
 
-                var cnStrBuilder = new SqlConnectionStringBuilder
-                {
-                    InitialCatalog = "Education",
-                    IntegratedSecurity = true,
-                    DataSource = "Home",
-                    ConnectTimeout = 0
-                };
-            
-
-            //var comm = new SqlCommand("Select Data from CreditRisks where CustID = 1234", sql);
-            //var bits2 = comm.ExecuteScalar() as byte[];
-            
-            //    sql.Close();
-
-
-            //    var stream2 = new MemoryStream(bits2);
-            //    var less = (Lesson)formatter.Deserialize(stream2);
-
-            _lesson.Autor = "fsdf";
+            var cnStrBuilder = new SqlConnectionStringBuilder
+            {
+                InitialCatalog = "Education",
+                IntegratedSecurity = true,
+                DataSource = "Home",
+                ConnectTimeout = 0
+            };
+            var random = new Random();
+            _lesson.Autor = "autor" + random.Next(100);
             _lesson.DateCreate = DateTime.Now;
-            
-                var dal = new LessonDB.LessonsDal();
-                dal.OpenConnection(sql.ConnectionString);
+
+            var dal = new LessonDB.LessonsDal();
+            dal.OpenConnection(cnStrBuilder.ConnectionString);
             dal.InsertLesson(_lesson);
+            var l = dal.GetLessonsInfoByField("Autor", "autor1");
+
             dal.CloseConnection();
-                ElementPanel.Effect = null;
-                ElementPanel.Opacity = 1;
-                SaveLessonPanel.Visibility = Visibility.Hidden;
-            
+            ElementPanel.Effect = null;
+            ElementPanel.Opacity = 1;
+            SaveLessonPanel.Visibility = Visibility.Hidden;
+
         }
 
         private void RefreshUpdatedRightAnswers(object grid)
@@ -150,15 +142,15 @@ namespace educationProject
         }
 
         private void LoadLessonInputPassword(string pathOpenFile)
-        {       
+        {
             var formatter = new BinaryFormatter();
-         
+
             using (var fileStream = File.OpenRead(pathOpenFile + ".dat"))
             {
-                _lesson = (Lesson) formatter.Deserialize(fileStream);
+                _lesson = (Lesson)formatter.Deserialize(fileStream);
             }
 
-            string[] data = { _lesson.Password, pathOpenFile};
+            string[] data = { _lesson.Password, pathOpenFile };
 
             PasswordForEditLessonTextBox.Tag = data;
             PasswordForEditLessonTextBox.Text = "";
@@ -186,7 +178,7 @@ namespace educationProject
             PasswordForEditLessonGrid.Visibility = Visibility.Hidden;
             SectionPanel.Opacity = 1;
         }
-        
+
         private void LoadLessons(string pathOpenFile, bool userView)
         {
             ElementPanel.Tag = userView;
@@ -215,19 +207,19 @@ namespace educationProject
                     AddTextPanelOrImagePanel(data, ElementPanel);
 
                     var testInfo = data as TestInfo;
-                    
+
                     if (testInfo != null)
                     {
                         var testStackPanel = new TestStackPanel(testInfo.Question, testInfo.Answers,
                             testInfo.NumberRightAnswer, ElementPanel, userView: userView);
-                            
+
                         ElementPanel.Children.Add(testStackPanel);
                     }
                 }
-                
+
             }
 
-            if(userView) 
+            if (userView)
                 TakeOffSelectionFromRadioButtons(ElementPanel);
         }
 
@@ -281,7 +273,7 @@ namespace educationProject
             var textInfo = data as TextInfo;
             if (textInfo != null)
             {
-                var textGrid = new TextStackPanel(textInfo.Text, "введите текст", ElementPanel, 
+                var textGrid = new TextStackPanel(textInfo.Text, "введите текст", ElementPanel,
                     haveDeleteButton: !userView, userView: userView);
                 stackPanel.Children.Add(textGrid);
             }

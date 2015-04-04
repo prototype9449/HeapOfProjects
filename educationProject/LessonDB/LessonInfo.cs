@@ -14,34 +14,5 @@ namespace LessonDB
         public string Title;
         public string Autor;
         public DateTime DateCreate;
-        public string Size;
-        public byte[] Data;
-
-        public LessonInfo(Lesson lesson)
-        {
-            Title = lesson.Title;
-            Autor = lesson.Autor;
-            DateCreate = lesson.DateCreate;
-            BuildByteArray(lesson);
-        }
-
-        public static Lesson GetLesson(byte[] data)
-        {
-            var formatter = new BinaryFormatter();
-            using (var stream = new MemoryStream(data))
-            {
-                var lesson = (Lesson) formatter.Deserialize(stream);
-                return lesson;
-            }
-        }
-
-        private void BuildByteArray(Lesson lesson)
-        {
-            var formatter = new BinaryFormatter();
-            var stream = new MemoryStream();
-            formatter.Serialize(stream, lesson);
-            Data = stream.GetBuffer();
-            Size = Data.Length.ToString();
-        }
     }
 }
