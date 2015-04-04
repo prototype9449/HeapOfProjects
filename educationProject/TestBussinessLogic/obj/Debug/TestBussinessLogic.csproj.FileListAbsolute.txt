@@ -1,0 +1,6 @@
+E:\educationrepo\educationProject\TestBussinessLogic\bin\Debug\TestBussinessLogic.exe.config
+E:\educationrepo\educationProject\TestBussinessLogic\bin\Debug\TestBussinessLogic.exe
+E:\educationrepo\educationProject\TestBussinessLogic\bin\Debug\TestBussinessLogic.pdb
+E:\educationrepo\educationProject\TestBussinessLogic\obj\Debug\TestBussinessLogic.csprojResolveAssemblyReference.cache
+E:\educationrepo\educationProject\TestBussinessLogic\obj\Debug\TestBussinessLogic.exe
+E:\educationrepo\educationProject\TestBussinessLogic\obj\Debug\TestBussinessLogic.pdb

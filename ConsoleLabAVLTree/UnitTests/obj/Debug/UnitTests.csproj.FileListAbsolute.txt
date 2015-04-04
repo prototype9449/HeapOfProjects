@@ -1,0 +1,7 @@
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\bin\Debug\ConsoleLabAVLTree.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\bin\Debug\ConsoleLabAVLTree.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleLabAVLTree\UnitTests\obj\Debug\UnitTests.pdb

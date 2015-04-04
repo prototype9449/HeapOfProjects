@@ -1,0 +1,12 @@
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.exe.config
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.pdb
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.exe.config
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.exe
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.pdb
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\obj\Debug\ConsoleAppListSkip.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.exe
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\ConsoleAppListSkip\bin\Debug\ConsoleAppListSkip.pdb

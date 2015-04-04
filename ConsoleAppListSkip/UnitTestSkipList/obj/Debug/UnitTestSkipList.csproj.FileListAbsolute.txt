@@ -1,0 +1,14 @@
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\UnitTestSkipList.dll
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\UnitTestSkipList.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\ConsoleAppListSkip.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\ConsoleAppListSkip.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.dll
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.pdb
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.dll
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\obj\Debug\UnitTestSkipList.pdb
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\UnitTestSkipList.dll
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\UnitTestSkipList.pdb
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\ConsoleAppListSkip.exe
+E:\MyRepozitoryGitHub\ConsoleAppListSkip\UnitTestSkipList\bin\Debug\ConsoleAppListSkip.pdb

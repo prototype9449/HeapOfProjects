@@ -1,0 +1,6 @@
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\bin\WebAppEventsPage.dll.config
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\bin\WebAppEventsPage.dll
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\bin\WebAppEventsPage.pdb
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\obj\Debug\WebAppEventsPage.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\obj\Debug\WebAppEventsPage.dll
+E:\MyRepozitoryGitHub\WebAppEventsPage\WebAppEventsPage\obj\Debug\WebAppEventsPage.pdb
