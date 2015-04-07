@@ -16,3 +16,6 @@ E:\educationrepo\educationProject\educationProject\obj\x86\Debug\educationProjec
 E:\educationrepo\educationProject\educationProject\obj\x86\Debug\educationProject.pdb
 E:\educationrepo\educationProject\educationProject\bin\Debug\LessonDB.dll
 E:\educationrepo\educationProject\educationProject\bin\Debug\LessonDB.pdb
+E:\MyRepozitoryGitHub\educationProject\educationProject\bin\Debug\educationProject.exe.config
+E:\MyRepozitoryGitHub\educationProject\educationProject\obj\x86\Debug\educationProject.exe
+E:\MyRepozitoryGitHub\educationProject\educationProject\obj\x86\Debug\educationProject.pdb

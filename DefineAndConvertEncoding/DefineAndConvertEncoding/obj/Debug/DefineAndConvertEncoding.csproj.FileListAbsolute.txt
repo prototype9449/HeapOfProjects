@@ -1,0 +1,7 @@
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\bin\Debug\DefineAndConvertEncoding.exe.config
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\obj\Debug\DefineAndConvertEncoding.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\bin\Debug\DefineAndConvertEncoding.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\bin\Debug\DefineAndConvertEncoding.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\obj\Debug\DefineAndConvertEncoding.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\obj\Debug\DefineAndConvertEncoding.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\DefineAndConvertEncoding\DefineAndConvertEncoding\bin\Debug\Ude.dll
