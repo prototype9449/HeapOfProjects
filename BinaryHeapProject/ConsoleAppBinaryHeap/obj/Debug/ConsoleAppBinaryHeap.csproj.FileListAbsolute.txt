@@ -1,0 +1,8 @@
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\bin\Debug\ConsoleAppBinaryHeap.exe.config
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\bin\Debug\ConsoleAppBinaryHeap.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\bin\Debug\ConsoleAppBinaryHeap.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\obj\Debug\ConsoleAppBinaryHeap.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\obj\Debug\ConsoleAppBinaryHeap.exe
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\obj\Debug\ConsoleAppBinaryHeap.pdb
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\bin\Debug\BinaryHeapLib.dll
+C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\ConsoleAppBinaryHeap\bin\Debug\BinaryHeapLib.pdb

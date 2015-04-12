@@ -32,6 +32,7 @@ namespace educationProject
         {
             return LoginTextBox.Text.Length >= 2;
         }
+
         
     }
 }

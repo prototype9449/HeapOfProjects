@@ -176,12 +176,12 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="Resource/GeneralBackGround.jpg"/>
         </Grid.Background>
 
-        <StackPanel Name="LogInMenu" VerticalAlignment="Center">
+        <StackPanel Name="LogInMenu" VerticalAlignment="Center" Visibility="Visible">
             <Grid Width="500" Height="120">
                 <Grid.Background>
                     <ImageBrush ImageSource="Resource/ApplicationLogo.png"/>
@@ -197,7 +197,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Name="AuthenticationStackPanel" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                <StackPanel Name="AuthenticationStackPanel" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
                         MaxHeight="500" MinWidth="300" Width="500" MaxWidth="600">
                     <TextBlock Text="Введите Имя:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Azure" Margin="0, 30, 0, 0" TextDecorations="Underline"/>
                     <TextBox Name="LoginTextBox" FontSize="25" Margin="83,45,78,0"/>
@@ -208,15 +208,11 @@
         </StackPanel>
 
 
-
-
-
-
-
         <Grid Visibility="Hidden" Name="MenuLesson">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
@@ -247,16 +243,17 @@
                 <WrapPanel Name="SectionPanel" Orientation="Horizontal"
                        ItemHeight="100" ItemWidth="130" Margin="5" Grid.Row="1">
                 </WrapPanel>
-                
+
                 <WrapPanel Name="FolderIsEmptyErrorPanel" Grid.Row="1" HorizontalAlignment="Center">
-                    
+
                 </WrapPanel>
             </Grid>
 
-            <StackPanel Name="PasswordForEditLessonGrid" Grid.Column="1" MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
-            <StackPanel.Background>
-                <ImageBrush ImageSource="Resource/RequestPanel.png"/>
-            </StackPanel.Background>
+            <StackPanel Name="PasswordForEditLessonGrid" Grid.Column="1" MinHeight="270" MaxHeight="500" MinWidth="300" 
+                        Width="400" MaxWidth="600" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resource/RequestPanel.png"/>
+                </StackPanel.Background>
 
                 <TextBlock Text="Введите пароль:" VerticalAlignment="Center" FontSize="35" Foreground="Azure" Margin="0, 30, 0, 0" TextDecorations="Underline" HorizontalAlignment="Center"/>
                 <TextBox Name="PasswordForEditLessonTextBox" VerticalAlignment="Top" ToolTip="Введите пароль:"  
@@ -269,19 +266,22 @@
                 </Grid>
             </StackPanel>
 
-            <StackPanel Name="CreateSectionGrid" Grid.Column="1" MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+            <StackPanel Name="CreateSectionGrid" Grid.Column="1" MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Resource/RequestPanel.png"/>
                 </StackPanel.Background>
 
-                <TextBlock Text="Создание раздела:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Azure" Margin="0, 30, 0, 0" TextDecorations="Underline"/>
+                <TextBlock Text="Создание раздела:" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           FontSize="35" Foreground="Azure" Margin="0, 30, 0, 0" TextDecorations="Underline"/>
                 <TextBox Name="NameSection" VerticalAlignment="Top" ToolTip="Введите имя раздела:"  
                          GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Margin="10,45,0,0" Width="350" Text="Введите имя раздела:"/>
                 <Image Name="CreateSection"  MouseDown="CreateSection_OnClick"  
                        VerticalAlignment="Top" Margin="10,44,0,0" Height="40" Width="136" Cursor="Hand" Source="Resource/CreateSectionButton.png" Stretch="Fill"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Name="TitleCreatingLesson" Visibility="Hidden"  MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Name="TitleCreatingLesson" 
+                        Visibility="Hidden"  MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Resource/RequestPanel.png"/>
                 </StackPanel.Background>
@@ -298,6 +298,63 @@
                 <WrapPanel Name="LessonsPanel" Orientation="Horizontal" 
                            ItemHeight="100" ItemWidth="200"/>
             </Grid>
+
+            <Grid Name="SearchPanel" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="Bisque">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Name="ChooseExactlyCheckBox" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="Точно?" Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="Искать по" Grid.Column="2"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Названию" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        <TextBox FontSize="20" Name="TextBoxTitle" Grid.Column="0"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Автору" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        <TextBox FontSize="20" Name="TextBoxAutor" Grid.Column="0"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Дате" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        <TextBox FontSize="20" Name="TextBoxDateCreating" Grid.Column="0"/>
+                    </Grid>
+                    <Button Name="ButtonSearchLessons" Content="Поиск" FontSize="30" Grid.Row="4" Background="CornflowerBlue" Click="ButtonSearchLessons_OnClick"/>
+                </Grid>
+                <Button Name="ButClearAllSerachingLessons" Content="Clear" FontSize="25" Grid.Row="1" Click="ButClearAllSerachingLessons_OnClick"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2" Template="{DynamicResource ScrollViewerControlTemplate1}">
+                    <StackPanel Name="StackPanelSearchingLessons" Background="Transparent"/>
+                </ScrollViewer>
+            </Grid>
         </Grid>
 
 
@@ -308,7 +365,8 @@
                 <ColumnDefinition Width="157"/>
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Name="CustomScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" Template="{DynamicResource ScrollViewerControlTemplate1}">
+            <ScrollViewer Name="CustomScrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Auto"  VerticalAlignment="Center" 
+                          HorizontalAlignment="Center" Template="{DynamicResource ScrollViewerControlTemplate1}">
                 <StackPanel Name="ElementPanel" HorizontalAlignment="Stretch" MinHeight="400"
                         VerticalAlignment="Top" MinWidth="100" Width="600" MaxWidth="900" FlowDirection="LeftToRight" DataContext="{Binding}" Drop="DragAndDropField_DropImage">
                     <StackPanel.Background>
@@ -317,28 +375,50 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <StackPanel Name="SaveLessonPanel" Grid.Column="1" MinHeight="270" MaxHeight="500" MinWidth="300" Width="400" MaxWidth="600" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+            <StackPanel Name="SaveLessonPanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Resource/RequestPanel.png"/>
                 </StackPanel.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Name="TitleLessonTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Имя автора:"  
+                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Имя автора:"/>
+                    <TextBox Grid.Column="1" Name="AutorTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Название урока:"  
+                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Название урока:"/>
+                </Grid>
+                
+                
+                
+                <Grid Height="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Name="NameLessonForSaveButtonEscape"  MouseDown="NameLessonForSaveButtonEscape_Click" VerticalAlignment="Center"  HorizontalAlignment="Center"
+                           Width="136" Cursor="Hand" Source="Resource/CancelButton.png" Grid.Row="0"/>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Сохранить:" VerticalAlignment="Center" FontSize="35" Foreground="Azure" Margin="0, 30, 0, 0" TextDecorations="Underline" HorizontalAlignment="Center"/>
-                <TextBox Name="NameLessonForSaveTextBox" VerticalAlignment="Top" ToolTip="Название урока:"  
-                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Margin="10,45,0,0" Width="350" Text="Название урока:"/>
-                <Grid Column="2">
-                    <Image Name="NameLessonForSaveButtonEscape"  MouseDown="NameLessonForSaveButtonEscape_Click"
-                       VerticalAlignment="Top" Margin="0,44,150,0" Height="40" Width="136" Cursor="Hand" Source="Resource/CancelButton.png" Stretch="Fill" Grid.Column="0"/>
-                    <Image Name="NameLessonForSaveButtonOK"  MouseDown="NameLessonForSaveButtonOK_Click"  
-                       VerticalAlignment="Top" Margin="150,44,0,0" Height="40" Width="136" Cursor="Hand" Source="Resource/SaveButton.png" Stretch="Fill" Grid.Column="1"/>
+                        <Image Name="NameLessonForSaveButtonOK"  Grid.Column="0" MouseDown="NameLessonForSaveButtonOK_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                               Cursor="Hand" Source="Resource/SaveButton.png"/>
+                        <Button Name="SaveButtonDataBase" Grid.Column="1"  Content="Send to server" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                               Click="SaveButtonDataBase_OnClick" Background="Coral" FontSize="30"/>
+                    </Grid>
                 </Grid>
             </StackPanel>
 
 
 
             <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                
-                    <Image Name="CalculatingResult" MouseDown="CalculatingResult_Click" Height="40" Width="136" Source="Resource/resultsButton.png" ToolTip="Посмотреть результаты" Margin="10" Cursor="Hand"/>
-                
+
+                <Image Name="CalculatingResult" MouseDown="CalculatingResult_Click" Height="40" Width="136" Source="Resource/resultsButton.png" ToolTip="Посмотреть результаты" Margin="10" Cursor="Hand"/>
+
                 <Image Name="BackToMenuLesson" MouseDown="BackToMenuLesson_OnClick" Height="40" Width="136" Source="Resource/BackButton.png" ToolTip="Назад" Margin="10" Cursor="Hand"/>
             </StackPanel>
 

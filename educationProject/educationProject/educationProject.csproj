@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{FED18B17-3DB9-4A82-A65E-482BF631ECAC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>educationProject</RootNamespace>
     <AssemblyName>educationProject</AssemblyName>
@@ -59,6 +59,7 @@
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Transactions" />
@@ -92,6 +93,7 @@
     <Compile Include="Simple classes\Derivatives control\BaseStackPanel.cs" />
     <Compile Include="Simple classes\Derivatives control\ImageStackPanel.cs" />
     <Compile Include="Simple classes\Derivatives control\TestStackPanel.cs" />
+    <Compile Include="Simple classes\FactoryButton.cs" />
     <Compile Include="Simple classes\FactoryGrid.cs" />
     <Compile Include="GUI\ForRemove.cs" />
     <Compile Include="Simple classes\DataBase\IUserDataBase.cs" />
