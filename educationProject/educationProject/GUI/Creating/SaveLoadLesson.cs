@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Effects;
 using educationProject.Simple_classes;
 using LessonDB;
+using LessonDB.LessonDals;
 using LessonLibrary;
 using Button = System.Windows.Controls.Button;
 using Control = System.Windows.Controls.Control;
@@ -289,7 +290,7 @@ namespace educationProject
         {
             ButClearAllSerachingLessons_OnClick(null, null);
 
-            var dal = new LessonsDal(_connectionString);
+            var dal = new SimplyLessonsDal(_connectionString);
 
             var parameters = new List<KeyValuePair<TypeSearch, string>>();
 
@@ -327,7 +328,7 @@ namespace educationProject
             var button = sender as Button;
             var idlesson = (int)button.Tag;
 
-            var dal = new LessonsDal(_connectionString);
+            var dal = new SimplyLessonsDal(_connectionString);
             var lesson = dal.GetLessonById(idlesson);
 
             var path = ViewWindowCreateSection.Tag + "/" + lesson.Title + ".dat";
@@ -352,7 +353,7 @@ namespace educationProject
             _lesson.Autor = AutorTextBox.Text;
             _lesson.DateCreate = DateTime.Now;
 
-            var dal = new LessonsDal(_connectionString);
+            var dal = new SimplyLessonsDal(_connectionString);
 
             dal.InsertLesson(_lesson);
 

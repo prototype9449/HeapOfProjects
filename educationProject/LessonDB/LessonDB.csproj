@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LessonDals\ParamLessonsDal.cs" />
+    <Compile Include="LessonDals\SimplyLessonsDal.cs" />
+    <Compile Include="LessonDals\StoreProcedureLessonsDal.cs" />
     <Compile Include="LessonInfo.cs" />
     <Compile Include="LessonInfoId.cs" />
-    <Compile Include="LessonsDal.cs" />
+    <Compile Include="LessonDals\LessonsDal.cs" />
     <Compile Include="LessonsInfoData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeSearch.cs" />

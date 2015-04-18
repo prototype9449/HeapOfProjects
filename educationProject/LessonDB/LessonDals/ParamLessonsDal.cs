@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -8,17 +7,18 @@ using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using LessonLibrary;
-namespace LessonDB
-{
-    public class LessonsDal : IDisposable
-    {
-        private SqlConnection _sqlConnection;
 
-        public LessonsDal(SqlConnectionStringBuilder builder)
+namespace LessonDB.LessonDals
+{
+    public class ParamLessonsDal : LessonsDal
+    {
+        protected override sealed SqlConnection _sqlConnection { get; set; }
+
+        public ParamLessonsDal(SqlConnectionStringBuilder builder)
         {
             _sqlConnection = new SqlConnection(builder.ConnectionString);
         }
-        public LessonsDal(string cnString)
+        public ParamLessonsDal(string cnString)
         {
             _sqlConnection = new SqlConnection(cnString);
         }
@@ -26,8 +26,7 @@ namespace LessonDB
         {
             _sqlConnection.Close();
         }
-
-        public void InsertLesson(Lesson lesson)
+        public override void InsertLesson(Lesson lesson)
         {
             _sqlConnection.Open();
 
@@ -38,7 +37,6 @@ namespace LessonDB
 
             _sqlConnection.Close();
         }
-
         private SqlCommand GetCommandeInsert(string sqlCommande, LessonsInfoData lessonInfo)
         {
             var command = new SqlCommand(sqlCommande, _sqlConnection);
@@ -56,56 +54,26 @@ namespace LessonDB
             command.Parameters.AddWithValue("@id", id);
             return command;
         }
-
-        private List<Lesson> GetLessonsByCommand(SqlCommand command)
+        public override Lesson GetLessonById(int id)
         {
-            var lessons = new List<Lesson>();
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    byte[] data = (byte[]) reader["Data"];
-                    lessons.Add(LessonsInfoData.GetLesson(data));
-                }
-            }
-            return lessons;
-        }
-
-        public Lesson GetLessonById(int id)
-        {
-            _sqlConnection.Open();
-
             string sqlSelectById =
                 string.Format("select Title, Size, DateCreate, Data, Autor from Lessons where id = @id");
 
             var lessons = GetLessonsByCommand(SetParamForCommand(sqlSelectById, id));
 
-            _sqlConnection.Close();
-
-            if(lessons.Count > 1)
+            if (lessons.Count > 1)
                 throw new InvalidDataException("There are lessons more than one in the data base");
-
 
             return lessons.First();
         }
 
-        public void DeleteLessonById(int id)
+        public override void DeleteLessonById(int id)
         {
-            string sqlSelectById = string.Format( "delete from Lessons where id = @id");
+            string sqlDeleteById = string.Format("delete from Lessons where id = @id");
 
             _sqlConnection.Open();
-            SetParamForCommand(sqlSelectById, id).ExecuteNonQuery();
+            SetParamForCommand(sqlDeleteById, id).ExecuteNonQuery();
             _sqlConnection.Close();
-        }
-
-        public List<LessonInfoId> GetLessonsByFieldsExactly(List<KeyValuePair<TypeSearch, string>> parameters)
-        {
-            return GetLessonsByFields(parameters, GetConditionalEquals);
-        }
-
-        public List<LessonInfoId> GetLessonsByFieldsLikely(List<KeyValuePair<TypeSearch, string>> parameters)
-        {
-            return GetLessonsByFields(parameters, GetConditionLike);
         }
 
         private string GetConditionLike(string value)
@@ -117,10 +85,10 @@ namespace LessonDB
         {
             return string.Format("=@{0}", value);
         }
-        private  List<LessonInfoId> GetLessonsByFields(List<KeyValuePair<TypeSearch, string>> parameters, Func<string, string> getConditional)
+        private List<LessonInfoId> GetLessonsByFields(List<KeyValuePair<TypeSearch, string>> parameters, Func<string, string> getConditional)
         {
             string sqlSelect = string.Format("select id, Title, Autor, DateCreate from Lessons where ");
-            if(parameters.Count == 0) throw new ArgumentNullException("Amount parameters equals zero");
+            if (parameters.Count == 0) throw new ArgumentNullException("Amount parameters equals zero");
 
             sqlSelect += string.Format("{0} {1}", GetNameField(parameters[0].Key), getConditional(GetNameField(parameters[0].Key)));
             for (int i = 1; i < parameters.Count; i++)
@@ -136,40 +104,14 @@ namespace LessonDB
             return GetLessonsInfoByCommand(command);
         }
 
-        private List<LessonInfoId> GetLessonsInfoByCommand(SqlCommand command)
+        public override List<LessonInfoId> GetLessonsByFieldsExactly(List<KeyValuePair<TypeSearch, string>> parameters)
         {
-            _sqlConnection.Open();
-
-            var lessons = new List<LessonInfoId>();
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    var id = (int)reader["id"];
-                    var title = reader["Title"].ToString();
-                    var autor = reader["Autor"].ToString();
-                    var dateCreate = (DateTime)reader["DateCreate"];
-                    lessons.Add(new LessonInfoId(title, autor, id, dateCreate));
-                }
-            }
-            _sqlConnection.Close();
-
-            return lessons;
+            return GetLessonsByFields(parameters, GetConditionalEquals);
         }
 
-        private string GetNameField(TypeSearch typeSearch)
+        public override List<LessonInfoId> GetLessonsByFieldsLikely(List<KeyValuePair<TypeSearch, string>> parameters)
         {
-            switch (typeSearch)
-            {
-                case TypeSearch.Title :
-                    return "Title";
-                case TypeSearch.Autor :
-                    return "Autor";
-                case TypeSearch.DateCreate:
-                    return "DateCreate";
-            }
-            throw new InstanceNotFoundException();
+            return GetLessonsByFields(parameters, GetConditionLike);
         }
-
     }
 }

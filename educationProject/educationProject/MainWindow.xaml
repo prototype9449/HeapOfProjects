@@ -375,45 +375,56 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <StackPanel Name="SaveLessonPanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+            <Grid Name="SaveLessonPanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Name="NameLessonForSaveButtonEscape"  MouseDown="NameLessonForSaveButtonEscape_Click" VerticalAlignment="Center"  HorizontalAlignment="Center"
+                           Width="136" Cursor="Hand" Source="Resource/CancelButton.png" Grid.Row="0" Grid.Column="0"/>
+                
+                <StackPanel Grid.Row="1" Grid.Column="1">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Resource/RequestPanel.png"/>
                 </StackPanel.Background>
-                <Grid>
+                <Grid Width="400">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Column="0" Name="TitleLessonTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Имя автора:"  
-                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Имя автора:"/>
-                    <TextBox Grid.Column="1" Name="AutorTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Название урока:"  
-                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Название урока:"/>
-                </Grid>
-                
-                
-                
-                <Grid Height="100">
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Name="NameLessonForSaveButtonEscape"  MouseDown="NameLessonForSaveButtonEscape_Click" VerticalAlignment="Center"  HorizontalAlignment="Center"
-                           Width="136" Cursor="Hand" Source="Resource/CancelButton.png" Grid.Row="0"/>
-                    <Grid Grid.Row="1">
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Название урока" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Автор" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    
+                    <TextBox Grid.Column="1" Grid.Row="0" MinWidth="100" Name="TitleLessonTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Имя автора:"  
+                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Имя автора:" Margin="10"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" MinWidth="100" Name="AutorTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Название урока:"  
+                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Название урока:" Margin="10"/>
+                </Grid>
+                
+                
+                
+                <Grid Height="50">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-
                         <Image Name="NameLessonForSaveButtonOK"  Grid.Column="0" MouseDown="NameLessonForSaveButtonOK_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                                Cursor="Hand" Source="Resource/SaveButton.png"/>
                         <Button Name="SaveButtonDataBase" Grid.Column="1"  Content="Send to server" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                                Click="SaveButtonDataBase_OnClick" Background="Coral" FontSize="30"/>
-                    </Grid>
                 </Grid>
             </StackPanel>
 
-
+            </Grid>
 
             <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
 
