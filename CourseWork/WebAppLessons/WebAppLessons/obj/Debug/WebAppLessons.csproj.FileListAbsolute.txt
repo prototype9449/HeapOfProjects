@@ -17,3 +17,4 @@ E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\LessonLib.pdb
 E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.csprojResolveAssemblyReference.cache
 E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.dll
 E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.pdb
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\LessonDB.dll

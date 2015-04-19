@@ -18,3 +18,4 @@ E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonDB\bin\Debug\LessonLib.d
 E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonDB\bin\Debug\LessonLib.pdb
 E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonDB\obj\Debug\LessonDB.dll
 E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonDB\obj\Debug\LessonDB.pdb
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonDB\obj\Debug\LessonDB.csprojResolveAssemblyReference.cache

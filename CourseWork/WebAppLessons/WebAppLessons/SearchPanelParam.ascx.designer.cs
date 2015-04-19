@@ -67,12 +67,12 @@ namespace WebAppLessons {
         protected global::System.Web.UI.WebControls.Button ButtonClearResult;
         
         /// <summary>
-        /// ListBox элемент управления.
+        /// GridViewLesson элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox;
+        protected global::System.Web.UI.WebControls.GridView GridViewLesson;
     }
 }

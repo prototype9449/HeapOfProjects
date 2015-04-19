@@ -12,8 +12,8 @@
             text-align: center;
             margin: auto;
             position: absolute;
-            left: 20%;
-            right: 20%
+            left: 5%;
+            right: 5%
         }
 
         .glaw2 {
@@ -26,7 +26,7 @@
         .blok2, .blok3, .blok4 {
             float: left;
             margin: 5px;
-            width: 300px;
+            width: 440px;
             height: 500px;
             padding: 5px;
             text-align: center;
@@ -42,13 +42,13 @@
             <h2>Поиск по урокам</h2>
             <div class="glaw2">
                 <div class="blok2">
-                    <mycontrol:SearchPanelParam runat="server" KindSearch="param" />
+                    <mycontrol:SearchPanelParam runat="server" KindSearch="param" Size="<%# SizeColumn %>"/>
                 </div>
                 <div class="blok3">
-                    <mycontrol:SearchPanelParam runat="server" KindSearch="story" />
+                    <mycontrol:SearchPanelParam runat="server" KindSearch="story" Size="<%# SizeColumn %>"/>
                 </div>
                 <div class="blok4">
-                    <mycontrol:SearchPanelParam runat="server" KindSearch="simply" />
+                    <mycontrol:SearchPanelParam runat="server" KindSearch="simply" Size="<%# SizeColumn %>"/>
                 </div>
             </div>
         </div>
