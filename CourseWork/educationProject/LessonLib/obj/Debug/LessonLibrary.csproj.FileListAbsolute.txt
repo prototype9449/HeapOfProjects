@@ -1,0 +1,8 @@
+E:\educationrepo\educationProject\LessonLib\bin\Debug\LessonLib.dll
+E:\educationrepo\educationProject\LessonLib\bin\Debug\LessonLib.pdb
+E:\educationrepo\educationProject\LessonLib\obj\Debug\LessonLib.dll
+E:\educationrepo\educationProject\LessonLib\obj\Debug\LessonLib.pdb
+E:\MyRepozitoryGitHub\educationProject\LessonLib\bin\Debug\LessonLib.dll
+E:\MyRepozitoryGitHub\educationProject\LessonLib\bin\Debug\LessonLib.pdb
+E:\MyRepozitoryGitHub\educationProject\LessonLib\obj\Debug\LessonLib.dll
+E:\MyRepozitoryGitHub\educationProject\LessonLib\obj\Debug\LessonLib.pdb
