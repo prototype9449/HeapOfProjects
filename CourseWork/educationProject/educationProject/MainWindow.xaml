@@ -212,7 +212,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
@@ -348,9 +348,9 @@
                         <TextBlock Text="Дате" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
                         <TextBox FontSize="20" Name="TextBoxDateCreating" Grid.Column="0"/>
                     </Grid>-->
-                    <Button Name="ButtonSearchLessons" Content="Поиск" FontSize="30" Grid.Row="3" Background="CornflowerBlue" Click="ButtonSearchLessons_OnClick"/>
+                    <Button Name="ButtonSearchLessons" Content="Поиск" FontSize="30" Width="150" HorizontalAlignment="Left" Grid.Row="3" Background="CornflowerBlue" Click="ButtonSearchLessons_OnClick"/>
                 </Grid>
-                <Button Name="ButClearAllSerachingLessons" Content="Clear" FontSize="25" Grid.Row="1" Click="ButClearAllSerachingLessons_OnClick"/>
+                <Button Name="ButClearAllSerachingLessons" Content="Clear" FontSize="25" Grid.Row="1" Click="ButClearAllSerachingLessons_OnClick" Width="150" HorizontalAlignment="Left"/>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2" Template="{DynamicResource ScrollViewerControlTemplate1}">
                     <StackPanel Name="StackPanelSearchingLessons" Background="Transparent"/>
                 </ScrollViewer>

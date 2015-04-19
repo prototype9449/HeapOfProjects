@@ -6,3 +6,8 @@ E:\MyRepozitoryGitHub\educationProject\LessonLib\bin\Debug\LessonLib.dll
 E:\MyRepozitoryGitHub\educationProject\LessonLib\bin\Debug\LessonLib.pdb
 E:\MyRepozitoryGitHub\educationProject\LessonLib\obj\Debug\LessonLib.dll
 E:\MyRepozitoryGitHub\educationProject\LessonLib\obj\Debug\LessonLib.pdb
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonLib\bin\Debug\LessonLib.dll
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonLib\bin\Debug\LessonLib.pdb
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonLib\obj\Debug\LessonLibrary.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonLib\obj\Debug\LessonLib.dll
+E:\MyRepozitoryGitHub\CourseWork\educationProject\LessonLib\obj\Debug\LessonLib.pdb

@@ -8,3 +8,12 @@ C:\Users\Сергей\Documents\Visual Studio 2013\Projects\WebAppLessons\WebApp
 C:\Users\Сергей\Documents\Visual Studio 2013\Projects\WebAppLessons\WebAppLessons\bin\LessonLib.dll
 C:\Users\Сергей\Documents\Visual Studio 2013\Projects\WebAppLessons\WebAppLessons\bin\LessonDB.pdb
 C:\Users\Сергей\Documents\Visual Studio 2013\Projects\WebAppLessons\WebAppLessons\bin\LessonLib.pdb
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\WebAppLessons.dll.config
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\WebAppLessons.dll
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\WebAppLessons.pdb
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\LessonLib.dll
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\LessonDB.pdb
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\bin\LessonLib.pdb
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.csprojResolveAssemblyReference.cache
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.dll
+E:\MyRepozitoryGitHub\CourseWork\WebAppLessons\WebAppLessons\obj\Debug\WebAppLessons.pdb

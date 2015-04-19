@@ -29,9 +29,10 @@ namespace LessonDB.LessonDals
         {
             var lessonInfo = new LessonsInfoData(lesson);
             string sqlInsertLesson =
-                string.Format("Insert Into Lessons (Title, DateCreate, Size, Data,  Autor) Values ({0}, {1}, {2}, {3}, {4})",
-                lessonInfo.Title, lessonInfo.DateCreate, lessonInfo.Size, lessonInfo.Data, lessonInfo.Autor);
+                string.Format("Insert Into Lessons (Title, DateCreate, Size, Data,  Autor) Values ('{0}', '{1}', '{2}', @Data, '{3}')",
+                lessonInfo.Title, lessonInfo.DateCreate, lessonInfo.Size, lessonInfo.Autor);
             var command = new SqlCommand(sqlInsertLesson, _sqlConnection);
+            command.Parameters.AddWithValue("@Data", lessonInfo.Data);
             _sqlConnection.Open();
             command.ExecuteNonQuery();
             _sqlConnection.Close();
@@ -40,15 +41,15 @@ namespace LessonDB.LessonDals
         public override Lesson GetLessonById(int id)
         {
             string sqlSelectById =
-                string.Format("select Title, Size, DateCreate, Data, Autor from Lessons where id = {0}",id);
-            var command = new SqlCommand(sqlSelectById);
+                string.Format("select Title, Size, DateCreate, Data, Autor from Lessons where id = '{0}'",id);
+            var command = new SqlCommand(sqlSelectById, _sqlConnection);
             var lessons = GetLessonsByCommand(command);
             return lessons.First();
         }
 
         public override void DeleteLessonById(int id)
         {
-            string sqlDeletetById = string.Format("delete from Lessons where id = {0}",id);
+            string sqlDeletetById = string.Format("delete from Lessons where id = '{0}'",id);
             _sqlConnection.Open();
             new SqlCommand(sqlDeletetById).ExecuteNonQuery();
             _sqlConnection.Close();
