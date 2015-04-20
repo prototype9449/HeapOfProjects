@@ -14,7 +14,7 @@
 <asp:Button runat="server" ID="ButtonClearResult" Text="Очистить результаты поиска" OnClick="ButtonClearResult_OnClick" Width="<%# Size %>"></asp:Button>
 <br />
 <asp:GridView runat="server" Width="<%# Size %>" ID="GridViewLesson" AutoGenerateColumns="False" AllowPaging="True" 
-    PageSize="5" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Font-Size="X-Small" OnRowDeleting="GridViewLesson_OnRowDeleting">
+    PageSize="5" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Font-Size="X-Small">
     <Columns>
         <asp:BoundField HeaderText="ID" DataField="Id" SortExpression="Id" ReadOnly="True">
             <ItemStyle Width="5%"></ItemStyle>

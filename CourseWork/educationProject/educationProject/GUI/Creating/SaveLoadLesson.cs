@@ -285,10 +285,9 @@ namespace educationProject
                 stackPanel.Children.Add(imageGrid);
             }
         }
-
-        private void ButtonSearchLessons_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonSearchLessons_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            ButClearAllSerachingLessons_OnClick(null, null);
+            ButClearAllSerachingLessons_OnMouseDown(null, null);
 
             var dal = new SimplyLessonsDal(_connectionString);
 
@@ -349,12 +348,12 @@ namespace educationProject
             RefreshDirectories();
         }
 
-        private void ButClearAllSerachingLessons_OnClick(object sender, RoutedEventArgs e)
+        private void ButClearAllSerachingLessons_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             StackPanelSearchingLessons.Children.Clear();
         }
 
-        private void SaveButtonDataBase_OnClick(object sender, RoutedEventArgs e)
+        private void SaveButtonDataBase_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             SettingLesson();
             _lesson.Title = TitleLessonTextBox.Text;

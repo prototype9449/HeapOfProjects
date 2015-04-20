@@ -42,12 +42,18 @@
             <h2>Поиск по урокам</h2>
             <div class="glaw2">
                 <div class="blok2">
+                    <span>Параметризированный запрос</span>
+                    <br/>
                     <mycontrol:SearchPanelParam runat="server" KindSearch="param" Size="<%# SizeColumn %>"/>
                 </div>
                 <div class="blok3">
+                    <span>Запрос через хранимые процедуры</span>
+                    <br/>
                     <mycontrol:SearchPanelParam runat="server" KindSearch="story" Size="<%# SizeColumn %>"/>
                 </div>
                 <div class="blok4">
+                    <span>Обычный запрос</span>
+                    <br/>
                     <mycontrol:SearchPanelParam runat="server" KindSearch="simply" Size="<%# SizeColumn %>"/>
                 </div>
             </div>

@@ -302,10 +302,9 @@
             <Grid Name="SearchPanel" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"/>
-                    <RowDefinition Height="50"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Background="Bisque">
+                <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -317,19 +316,34 @@
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <CheckBox Name="ChooseExactlyCheckBox" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <TextBlock Text="Точно?" Grid.Column="1"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="Искать по" Grid.Column="2"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid Grid.Column="0">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"></ImageBrush>
+                            </Grid.Background>
+                            <TextBlock Text="Точно?"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" Margin="30,0,0,0"/>
+                            <CheckBox Name="ChooseExactlyCheckBox"  HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="0,0,30,0"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"/>
+                            </Grid.Background>
+                            <TextBlock Text="Искать по"   FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                        </Grid>
+
                     </Grid>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Названию" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        <Grid Grid.Column="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"/>
+                            </Grid.Background>
+                            <TextBlock Text="Названию" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        </Grid>
                         <TextBox FontSize="20" Name="TextBoxTitle" Grid.Column="0"/>
                     </Grid>
                     <Grid Grid.Row="2">
@@ -337,7 +351,13 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Автору" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+                        <Grid Grid.Column="1">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"/>
+                            </Grid.Background>
+                            <TextBlock Text="Автору" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                        </Grid>
                         <TextBox FontSize="20" Name="TextBoxAutor" Grid.Column="0"/>
                     </Grid>
                     <!--<Grid Grid.Row="3">
@@ -348,10 +368,13 @@
                         <TextBlock Text="Дате" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
                         <TextBox FontSize="20" Name="TextBoxDateCreating" Grid.Column="0"/>
                     </Grid>-->
-                    <Button Name="ButtonSearchLessons" Content="Поиск" FontSize="30" Width="150" HorizontalAlignment="Left" Grid.Row="3" Background="CornflowerBlue" Click="ButtonSearchLessons_OnClick"/>
+                    <Image Name="ButtonSearchLessons" Grid.Row="3" MouseDown="ButtonSearchLessons_OnMouseDown" VerticalAlignment="Center"  HorizontalAlignment="Left"
+                           Width="150" Cursor="Hand" Source="Resource/Search.png" Stretch="Fill"/>
+                    <Image Name="ButClearAllSerachingLessons" Grid.Row="3" MouseDown="ButClearAllSerachingLessons_OnMouseDown" VerticalAlignment="Center"  HorizontalAlignment="Right"
+                           Width="150" Cursor="Hand" Source="Resource/Clear.png" Stretch="Fill"/>
                 </Grid>
-                <Button Name="ButClearAllSerachingLessons" Content="Clear" FontSize="25" Grid.Row="1" Click="ButClearAllSerachingLessons_OnClick" Width="150" HorizontalAlignment="Left"/>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2" Template="{DynamicResource ScrollViewerControlTemplate1}">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Template="{DynamicResource ScrollViewerControlTemplate1}">
                     <StackPanel Name="StackPanelSearchingLessons" Background="Transparent"/>
                 </ScrollViewer>
             </Grid>
@@ -387,42 +410,61 @@
 
                 <Image Name="NameLessonForSaveButtonEscape"  MouseDown="NameLessonForSaveButtonEscape_Click" VerticalAlignment="Center"  HorizontalAlignment="Center"
                            Width="136" Cursor="Hand" Source="Resource/CancelButton.png" Grid.Row="0" Grid.Column="0"/>
-                
+
                 <StackPanel Grid.Row="1" Grid.Column="1">
-                <StackPanel.Background>
-                    <ImageBrush ImageSource="Resource/RequestPanel.png"/>
-                </StackPanel.Background>
-                <Grid Width="400">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Название урока" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Автор" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    
-                    <TextBox Grid.Column="1" Grid.Row="0" MinWidth="100" Name="TitleLessonTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Имя автора:"  
-                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Имя автора:" Margin="10"/>
-                        <TextBox Grid.Column="1" Grid.Row="1" MinWidth="100" Name="AutorTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Название урока:"  
-                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Название урока:" Margin="10"/>
-                </Grid>
-                
-                
-                
-                <Grid Height="50">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Resource/RequestPanel.png"/>
+                    </StackPanel.Background>
+                    <Grid Width="400">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Name="NameLessonForSaveButtonOK"  Grid.Column="0" MouseDown="NameLessonForSaveButtonOK_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0" >
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"></ImageBrush>
+                            </Grid.Background>
+                            <TextBlock Text="Название урока" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="1" >
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"></ImageBrush>
+                            </Grid.Background>
+                            <TextBlock  Text="Автор" Margin="10" FontSize="25"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="0" >
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"/>
+                            </Grid.Background>
+                            <TextBox  MinWidth="100" Name="TitleLessonTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Имя автора:"  GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Имя автора:" Margin="10"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="1" >
+                            <Grid.Background>
+                                <ImageBrush ImageSource="Resource/PanelForLabel.png"/>
+                            </Grid.Background>
+                            <TextBox  MinWidth="100" Name="AutorTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Название урока:"  
+                         GotFocus="ToolTip_RemoveText" LostFocus="ToolTip_AddText"  FontSize="25" Text="Название урока:" Margin="10"/>
+                            <Grid/>
+                        </Grid>
+                    </Grid>
+
+
+
+                    <Grid Height="50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Name="NameLessonForSaveButtonOK"  Grid.Column="0" MouseDown="NameLessonForSaveButtonOK_Click" Stretch="Fill"
                                Cursor="Hand" Source="Resource/SaveButton.png"/>
-                        <Button Name="SaveButtonDataBase" Grid.Column="1"  Content="Send to server" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                               Click="SaveButtonDataBase_OnClick" Background="Coral" FontSize="30"/>
-                </Grid>
-            </StackPanel>
+                        <Image Name="SaveButtonDataBase" Grid.Column="1" Stretch="Fill" Source="Resource/SendToServer.png"
+                               Cursor="Hand" MouseDown="SaveButtonDataBase_OnMouseDown"/>
+                    </Grid>
+                </StackPanel>
 
             </Grid>
 

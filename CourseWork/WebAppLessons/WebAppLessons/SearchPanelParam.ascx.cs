@@ -25,6 +25,9 @@ namespace WebAppLessons
             if (KindSearch == "simply") dalLesson = new SimplyLessonsDal(_connectionString);
 
             if (KindSearch == "story") dalLesson = new StoreProcedureLessonsDal(_connectionString);
+
+            GridViewLesson.RowDeleting += GridViewLesson_OnRowDeleting;
+            GridViewLesson.PageIndexChanging += GridViewLesson_OnPageIndexChanging;
         }
 
 
@@ -77,6 +80,14 @@ namespace WebAppLessons
                 GridViewLesson.DataBind();
 
             }
+        }
+
+        protected void GridViewLesson_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView) sender).DataSource = GetLessons();
+            ((GridView) sender).DataBind();
+
         }
     }
 }
