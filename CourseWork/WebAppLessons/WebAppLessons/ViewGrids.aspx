@@ -27,7 +27,7 @@
             float: left;
             margin: 5px;
             width: 440px;
-            height: 500px;
+            height: 600px;
             padding: 5px;
             text-align: center;
             border-radius: 4px;

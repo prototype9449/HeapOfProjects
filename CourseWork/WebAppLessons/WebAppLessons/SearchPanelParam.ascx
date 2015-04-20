@@ -1,17 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchPanelParam.ascx.cs" Inherits="WebAppLessons.SearchPanelParam" %>
 
-<asp:CheckBox ID="CheckBoxSearch" runat="server" Text="Точно" />
+<asp:CheckBox ID="CheckBoxSearch" runat="server" Text="Точно" Font-Size="Large" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Label ID="Label" runat="server" Text="Искать по"></asp:Label>
+    <asp:Label ID="Label" runat="server" Text="Искать по" Font-Size="Large"></asp:Label>
 <br />
 <asp:TextBox runat="server" ID="TitleText" Width="<%# Size %>"></asp:TextBox>
 <br />
 <asp:TextBox runat="server" ID="AutorText" Width="<%# Size %>"></asp:TextBox>
 <br />
 <br />
-<asp:Button runat="server" ID="ButtonSearch" Text="Искать" OnClick="ButtonSearch_OnClick" Width="<%# Size %>"></asp:Button>
+<asp:Button runat="server" ID="ButtonSearch" Text="Искать" OnClick="ButtonSearch_OnClick" Width="<%# Size %>" Font-Size="Large"></asp:Button>
 <br />
-<asp:Button runat="server" ID="ButtonClearResult" Text="Очистить результаты поиска" OnClick="ButtonClearResult_OnClick" Width="<%# Size %>"></asp:Button>
+<br />
+<asp:Button runat="server" ID="ButtonClearResult" Text="Очистить результаты поиска" OnClick="ButtonClearResult_OnClick" Width="<%# Size %>" Font-Size="Large"></asp:Button>
+<br />
 <br />
 <asp:GridView runat="server" Width="<%# Size %>" ID="GridViewLesson" AutoGenerateColumns="False" AllowPaging="True" 
     PageSize="5" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Font-Size="X-Small">
