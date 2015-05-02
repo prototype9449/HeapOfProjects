@@ -1,7 +1,0 @@
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\bin\Debug\TestBinaryHeap.dll
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\bin\Debug\TestBinaryHeap.pdb
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\bin\Debug\BinaryHeapLib.dll
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\bin\Debug\BinaryHeapLib.pdb
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\obj\Debug\TestBinaryHeap.csprojResolveAssemblyReference.cache
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\obj\Debug\TestBinaryHeap.dll
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\TestBinaryHeap\obj\Debug\TestBinaryHeap.pdb

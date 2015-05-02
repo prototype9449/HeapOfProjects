@@ -1,5 +1,0 @@
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\BinaryHeapLib\bin\Debug\BinaryHeapLib.dll
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\BinaryHeapLib\bin\Debug\BinaryHeapLib.pdb
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\BinaryHeapLib\obj\Debug\BinaryHeapLib.csprojResolveAssemblyReference.cache
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\BinaryHeapLib\obj\Debug\BinaryHeapLib.dll
-C:\Users\Сергей\Documents\Visual Studio 2013\Projects\BinaryHeapProject\BinaryHeapLib\obj\Debug\BinaryHeapLib.pdb

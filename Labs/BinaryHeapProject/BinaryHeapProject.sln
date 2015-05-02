@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBinaryHeap", "ConsoleAppBinaryHeap\ConsoleAppBinaryHeap.csproj", "{92BF481C-5CBB-426F-9A95-6A2BCCEDA0DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryHeapLib", "BinaryHeapLib\BinaryHeapLib.csproj", "{3C420673-1BFD-4069-B851-FD553B288909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBinaryHeap", "TestBinaryHeap\TestBinaryHeap.csproj", "{10BC52BD-6D44-47DD-A09D-EFB83C24B957}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92BF481C-5CBB-426F-9A95-6A2BCCEDA0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BF481C-5CBB-426F-9A95-6A2BCCEDA0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BF481C-5CBB-426F-9A95-6A2BCCEDA0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BF481C-5CBB-426F-9A95-6A2BCCEDA0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C420673-1BFD-4069-B851-FD553B288909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C420673-1BFD-4069-B851-FD553B288909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C420673-1BFD-4069-B851-FD553B288909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C420673-1BFD-4069-B851-FD553B288909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BC52BD-6D44-47DD-A09D-EFB83C24B957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BC52BD-6D44-47DD-A09D-EFB83C24B957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BC52BD-6D44-47DD-A09D-EFB83C24B957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BC52BD-6D44-47DD-A09D-EFB83C24B957}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

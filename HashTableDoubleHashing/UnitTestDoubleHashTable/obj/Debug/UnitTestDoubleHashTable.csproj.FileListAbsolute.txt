@@ -1,7 +1,0 @@
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\bin\Debug\UnitTestDoubleHashTable.dll
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\bin\Debug\UnitTestDoubleHashTable.pdb
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\bin\Debug\HashTableDoubleHashing.dll
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\bin\Debug\HashTableDoubleHashing.pdb
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\obj\Debug\UnitTestDoubleHashTable.csprojResolveAssemblyReference.cache
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\obj\Debug\UnitTestDoubleHashTable.dll
-E:\MyRepozitoryGitHub\HashTableDoubleHashing\UnitTestDoubleHashTable\obj\Debug\UnitTestDoubleHashTable.pdb
