@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstringAlgorithms", "SubstringAlgorithms\SubstringAlgorithms.csproj", "{05BAA229-EEB7-49EC-9FBF-82370DD678F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestKnut", "UnitTestKnut\UnitTestKnut.csproj", "{47520BE3-B233-4027-BF14-691AB1A15476}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSearch", "UnitTestKnut\UnitTestSearch.csproj", "{47520BE3-B233-4027-BF14-691AB1A15476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
