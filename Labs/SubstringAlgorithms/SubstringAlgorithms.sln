@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstringAlgorithms", "Subs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSearch", "UnitTestKnut\UnitTestSearch.csproj", "{47520BE3-B233-4027-BF14-691AB1A15476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFindingAllSubstrings", "ConsoleFindingAllSubstrings\ConsoleFindingAllSubstrings.csproj", "{084550FC-A9BA-41DF-A366-D683F1DB853E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{47520BE3-B233-4027-BF14-691AB1A15476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47520BE3-B233-4027-BF14-691AB1A15476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47520BE3-B233-4027-BF14-691AB1A15476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084550FC-A9BA-41DF-A366-D683F1DB853E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084550FC-A9BA-41DF-A366-D683F1DB853E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084550FC-A9BA-41DF-A366-D683F1DB853E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084550FC-A9BA-41DF-A366-D683F1DB853E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

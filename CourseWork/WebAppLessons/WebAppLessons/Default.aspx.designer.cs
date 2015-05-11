@@ -10,7 +10,7 @@
 namespace WebAppLessons {
     
     
-    public partial class Default {
+    public partial class ViewGrids {
         
         /// <summary>
         /// form1 элемент управления.
@@ -20,23 +20,5 @@ namespace WebAppLessons {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// PasswordBox элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PasswordBox;
-        
-        /// <summary>
-        /// ButtonNext элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonNext;
     }
 }

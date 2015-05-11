@@ -71,6 +71,16 @@ namespace UnitTestKnut
             var realShifts = Knut.GetIndexes(text, substring);
             Assert.IsTrue(realShifts.SequenceEqual(expectedShifts));
         }
+
+        [TestMethod]
+        public void ShiftsMustMutch4()
+        {
+            var text = "aaaaaaa";
+            var substring = "a";
+            var expectedShifts = new List<int> { 0,1,2,3,4,5,6 };
+            var realShifts = Knut.GetIndexes(text, substring);
+            Assert.IsTrue(realShifts.SequenceEqual(expectedShifts));
+        }
         
     }
 }

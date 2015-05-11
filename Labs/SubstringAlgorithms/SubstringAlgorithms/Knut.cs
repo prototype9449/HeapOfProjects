@@ -44,11 +44,11 @@ namespace SubstringAlgorithms
 
             for (int i = 0; i < text.Length; i++)
             {
-                while (amount >= 0 && substring[amount+1]!= text[i])
+                while (amount >= 0 && amount+1 < substring.Length && substring[amount+1]!= text[i])
                 {
                     amount = prefix[amount];
                 }
-                if (substring[amount + 1] == text[i])
+                if (amount + 1 < substring.Length && substring[amount + 1] == text[i])
                     amount++;
 
                 if (amount == substring.Length-1)

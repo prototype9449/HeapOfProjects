@@ -20,7 +20,7 @@ namespace SubstringAlgorithms.Boyer_moor
         {
             for (int i = 0; i < _sample.Length-1; i++)
             {
-                Add(_sample[i],i);
+                Add(_sample[i], _sample.Length - i-1);
             }
         }
 
@@ -40,13 +40,14 @@ namespace SubstringAlgorithms.Boyer_moor
         {
             get
             {
+                int a = Convert.ToInt16("2");
                 if (_stopSymbols.ContainsKey(symbol))
                 {
                     return _stopSymbols[symbol];
                 }
                 else
                 {
-                    return -1;
+                    return _sample.Length;
                 }
             }
         }
