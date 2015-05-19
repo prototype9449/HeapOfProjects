@@ -16,8 +16,8 @@ namespace ConsoleFindingAllSubstrings
             using (var reader = new StreamReader(@"E:\anna.txt", Encoding.Default))
             {
                 var text = reader.ReadToEnd();
-                indexesKnut = Knut.GetIndexes(text, "а");
-                indexesBoyer = BoyerMoor.GetIndexes(text, "а");
+                indexesKnut = Knut.GetIndexes(text, "ак");
+                indexesBoyer = BoyerMoor.GetIndexes(text, "ак");
             }
             Console.WriteLine(indexesBoyer.Count);
             Console.WriteLine(indexesKnut.Count);

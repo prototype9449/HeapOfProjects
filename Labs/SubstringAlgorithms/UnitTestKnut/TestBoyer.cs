@@ -25,6 +25,36 @@ namespace UnitTestKnut
         }
 
         [TestMethod]
+        public void StopSuffixForWordMustMatch1()
+        {
+            var sample = "abcdadcd";
+            var stopSuffixes = new StopSuffixes(sample);
+            Assert.AreEqual(stopSuffixes["d"], 2);
+            Assert.AreEqual(stopSuffixes["cd"], 4);
+            Assert.AreEqual(stopSuffixes["dcd"], 8);
+            Assert.AreEqual(stopSuffixes["adcd"], 8);
+            Assert.AreEqual(stopSuffixes["dadcd"], 8);
+            Assert.AreEqual(stopSuffixes["cdadcd"], 8);
+            Assert.AreEqual(stopSuffixes["bcdadcd"], 8);
+            Assert.AreEqual(stopSuffixes["abcdadcd"], 8);
+        }
+
+        [TestMethod]
+        public void StopSuffixForWordMustMatch2()
+        {
+            var sample = "aaaaaaa";
+            var stopSuffixes = new StopSuffixes(sample);
+            Assert.AreEqual(stopSuffixes["a"], 1);
+            Assert.AreEqual(stopSuffixes["aa"], 2);
+            Assert.AreEqual(stopSuffixes["aaa"], 3);
+            Assert.AreEqual(stopSuffixes["aaaa"], 7);
+            Assert.AreEqual(stopSuffixes["aaaaa"], 7);
+            Assert.AreEqual(stopSuffixes["aaaaaa"], 7);
+            Assert.AreEqual(stopSuffixes["aaaaaaa"], 7);
+            Assert.AreEqual(stopSuffixes["dasda"], 7);
+        }
+
+        [TestMethod]
         public void IndexesForWordMustMatch1()
         {
             var text = "abeccacbadbabbad";

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boyer moor\BoyerMoor.cs" />
+    <Compile Include="Boyer moor\StopSuffixes.cs" />
     <Compile Include="Boyer moor\StopSymbols.cs" />
     <Compile Include="Knut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
