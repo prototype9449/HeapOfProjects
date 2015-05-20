@@ -30,10 +30,16 @@ namespace SubstringAlgorithms
                     }
                     else
                     {
-                        var suffix = text.Substring(secondCh, i - secondCh+1);
-                        var shift = Math.Max(stopSuffixesProvider[suffix], stopSymbolsProvider[text[secondCh]]);
-                        
-                        i += shift;
+                        var suffix = text.Substring(secondCh, substring.Length - j);
+                        var suffixShift = stopSuffixesProvider[suffix];
+                        var symbolShift = stopSymbolsProvider[text[secondCh]];
+                        if (symbolShift == substring.Length)
+                        {
+                            symbolShift = substring.Length-countMatchedSymbols;
+                        }
+                        var maxShift = Math.Max(suffixShift, symbolShift);
+
+                        i += symbolShift;
                         countMatchedSymbols = 0;
                         break;
                     }

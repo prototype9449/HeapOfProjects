@@ -55,6 +55,20 @@ namespace SubstringAlgorithms.Boyer_moor
             {
                 if (_stopSuffixes.ContainsKey(suffix))
                 {
+                    var subSuffix = suffix;
+                    for (int i = 1; i < suffix.Length && (_sample.IndexOf(subSuffix) != 0 || subSuffix.Length == _sample.Length) && subSuffix.Length != 0; i++)
+                    {
+                        subSuffix = subSuffix.Substring(1, subSuffix.Length - 1);
+                    }
+                    //while (_sample.IndexOf(subSuffix) != 0 && subSuffix.Length != 0)
+                    //{
+                    //    subSuffix = subSuffix.Substring(0, subSuffix.Length - 1);
+                    //}
+                    if (subSuffix.Length != 0)
+                    {
+                        if (_stopSuffixes.ContainsKey(subSuffix))
+                            return _stopSuffixes[subSuffix];
+                    }
                     return _stopSuffixes[suffix];
                 }
                 else if(suffix.Count()!=1)

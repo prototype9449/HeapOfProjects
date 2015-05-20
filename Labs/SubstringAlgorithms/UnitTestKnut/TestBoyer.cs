@@ -55,6 +55,20 @@ namespace UnitTestKnut
         }
 
         [TestMethod]
+        public void StopSuffixForWordMustMatch3()
+        {
+            var sample = "колокол";
+            var stopSuffixes = new StopSuffixes(sample);
+            Assert.AreEqual(stopSuffixes["л"], 4);
+            Assert.AreEqual(stopSuffixes["ол"], 4);
+            Assert.AreEqual(stopSuffixes["кол"], 4);
+            Assert.AreEqual(stopSuffixes["окол"], 4);
+            Assert.AreEqual(stopSuffixes["локол"], 4);
+            Assert.AreEqual(stopSuffixes["олокол"], 4);
+            Assert.AreEqual(stopSuffixes["колокол"], 4);
+        }
+
+        [TestMethod]
         public void IndexesForWordMustMatch1()
         {
             var text = "abeccacbadbabbad";
@@ -79,6 +93,16 @@ namespace UnitTestKnut
             var text = "aaaaaaa";
             var subsrting = "a";
             var exceptedIndexes = new[] { 0,1,2,3,4,5,6 };
+            var realIndexes = BoyerMoor.GetIndexes(text, subsrting);
+            Assert.IsTrue(exceptedIndexes.SequenceEqual(realIndexes));
+        }
+
+        [TestMethod]
+        public void IndexesForWordMustMatch4()
+        {
+            var text = "поттоколоколкол";
+       var subsrting = "колокол";
+            var exceptedIndexes = new[] { 5};
             var realIndexes = BoyerMoor.GetIndexes(text, subsrting);
             Assert.IsTrue(exceptedIndexes.SequenceEqual(realIndexes));
         }
