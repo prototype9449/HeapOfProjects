@@ -10,27 +10,27 @@ namespace SubstringAlgorithms
         {
             var result = new int[sample.Length];
             result[0] = -1;
-            int k = -1;
+            int stepIndex = -1;
 
             for (int i = 1; i < sample.Length; i++)
             {
-                if (sample[k + 1] == sample[i])
+                if (sample[stepIndex + 1] == sample[i])
                 {
-                    result[i] = k + 1;
-                    k++;
+                    result[i] = stepIndex + 1;
+                    stepIndex++;
                 }
                 else
                 {
-                    while (k != -1)
+                    while (stepIndex != -1)
                     {
-                        k = result[k];
-                        if (sample[k+1] == sample[i])
+                        stepIndex = result[stepIndex];
+                        if (sample[stepIndex+1] == sample[i])
                         {
-                            k++;
+                            stepIndex++;
                             break;
                         }
                     }
-                    result[i] = k;
+                    result[i] = stepIndex;
                 }
             }
             return result;
@@ -38,9 +38,9 @@ namespace SubstringAlgorithms
 
         public static List<int> GetIndexes(string text, string substring)
         {
-            var prefix = GetPrefix(substring);
+            int[] prefix = GetPrefix(substring);
             var amount = 0;
-            var shifts = new List<int>();
+            var indexes = new List<int>();
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -53,11 +53,11 @@ namespace SubstringAlgorithms
 
                 if (amount == substring.Length-1)
                 {
-                    shifts.Add(i - substring.Length+1);
+                    indexes.Add(i - substring.Length+1);
                     amount = prefix[amount];
                 }
             }
-            return shifts;
+            return indexes;
         }
     }
 }

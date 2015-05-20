@@ -14,8 +14,9 @@ namespace SubstringAlgorithms
                 throw new InvalidOperationException("It is impossible. The length of text is less than the length of substring");
 
             var indexes = new List<int>();
-            var providerStopSymbols = new StopSymbols(substring);
-            var providerStopSuffixes = new StopSuffixes(substring);
+            var stopSymbolsProvider = new StopSymbols(substring);
+            var stopSuffixesProvider = new StopSuffixes(substring);
+
             int i = substring.Length - 1;
             int countMatchedSymbols = 0;
             while (i < text.Length)
@@ -30,8 +31,8 @@ namespace SubstringAlgorithms
                     else
                     {
                         var suffix = text.Substring(secondCh, i - secondCh+1);
-                        var shift = Math.Max(providerStopSuffixes[suffix], providerStopSymbols[text[secondCh]]);
-                        //i += providerStopSymbols[text[secondCh]];
+                        var shift = Math.Max(stopSuffixesProvider[suffix], stopSymbolsProvider[text[secondCh]]);
+                        
                         i += shift;
                         countMatchedSymbols = 0;
                         break;
