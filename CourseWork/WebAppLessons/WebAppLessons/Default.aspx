@@ -23,7 +23,7 @@
             margin: auto;
         }
 
-        .blok2, .blok3, .blok4 {
+        .blok2, .blok4 {
             float: left;
             margin: 5px;
             width: 440px;
@@ -40,16 +40,11 @@
     <form id="form1" runat="server">
         <div class="glaw1">
             <h2>Поиск по урокам</h2>
-            <div class="glaw2">
+            
                 <div class="blok2">
                     <span>Параметризированный запрос</span>
                     <br/>
                     <mycontrol:SearchPanelParam runat="server" KindSearch="param" Size="<%# SizeColumn %>"/>
-                </div>
-                <div class="blok3">
-                    <span>Запрос через хранимые процедуры</span>
-                    <br/>
-                    <mycontrol:SearchPanelParam runat="server" KindSearch="story" Size="<%# SizeColumn %>"/>
                 </div>
                 <div class="blok4">
                     <span>Обычный запрос</span>
@@ -57,7 +52,7 @@
                     <mycontrol:SearchPanelParam runat="server" KindSearch="simply" Size="<%# SizeColumn %>"/>
                 </div>
             </div>
-        </div>
+        
     </form>
 </body>
 </html>
