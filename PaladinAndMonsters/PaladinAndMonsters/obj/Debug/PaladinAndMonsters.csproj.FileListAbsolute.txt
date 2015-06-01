@@ -1,0 +1,12 @@
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.exe.config
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.exe
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.pdb
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.csprojResolveAssemblyReference.cache
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.exe
+c:\users\alexeyo\documents\visual studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.pdb
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.exe.config
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.exe
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\bin\Debug\PaladinAndMonsters.pdb
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.exe
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.pdb
+C:\Users\SergeyPo\Documents\Visual Studio 2013\Projects\PaladinAndMonsters\PaladinAndMonsters\obj\Debug\PaladinAndMonsters.csprojResolveAssemblyReference.cache
