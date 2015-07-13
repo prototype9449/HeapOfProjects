@@ -15,7 +15,7 @@ namespace UnitTestDoubleHashTable
 
         public override int GetHashCode()
         {
-            return Number;d
+            return Number;
         }
 
         public override bool Equals(object obj)
