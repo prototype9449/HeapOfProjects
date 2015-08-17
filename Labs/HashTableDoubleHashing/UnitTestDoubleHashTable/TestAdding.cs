@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using HashTableDoubleHashing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -35,6 +36,7 @@ namespace UnitTestDoubleHashTable
         [TestMethod]
         public void TestMethod1()
         {
+            Thread.Sleep(20000);
             var table = GetTable();
             var numbers = new int[]{31, 7, 20, 17, 12, 19, 25};
             foreach (var number in numbers)
