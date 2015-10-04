@@ -1,6 +1,0 @@
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\obj\Debug\WebEmptyApp.csprojResolveAssemblyReference.cache
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\bin\WebEmptyApp.dll.config
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\bin\WebEmptyApp.dll
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\bin\WebEmptyApp.pdb
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\obj\Debug\WebEmptyApp.dll
-E:\MyRepozitoryGitHub\WebEmptyApp\WebEmptyApp\obj\Debug\WebEmptyApp.pdb

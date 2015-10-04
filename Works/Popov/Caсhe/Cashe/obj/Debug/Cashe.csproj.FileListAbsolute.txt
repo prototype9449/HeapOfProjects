@@ -1,6 +1,0 @@
-E:\Students\Popov\Caсhe\Cashe\bin\Debug\Cashe.exe.config
-E:\Students\Popov\Caсhe\Cashe\bin\Debug\Cashe.exe
-E:\Students\Popov\Caсhe\Cashe\bin\Debug\Cashe.pdb
-E:\Students\Popov\Caсhe\Cashe\obj\Debug\Cashe.csprojResolveAssemblyReference.cache
-E:\Students\Popov\Caсhe\Cashe\obj\Debug\Cashe.exe
-E:\Students\Popov\Caсhe\Cashe\obj\Debug\Cashe.pdb

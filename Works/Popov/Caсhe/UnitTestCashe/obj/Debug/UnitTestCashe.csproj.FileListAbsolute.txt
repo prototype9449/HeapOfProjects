@@ -1,7 +1,0 @@
-E:\Students\Popov\Caсhe\UnitTestCashe\bin\Debug\UnitTestCashe.dll
-E:\Students\Popov\Caсhe\UnitTestCashe\bin\Debug\UnitTestCashe.pdb
-E:\Students\Popov\Caсhe\UnitTestCashe\bin\Debug\Cashe.exe
-E:\Students\Popov\Caсhe\UnitTestCashe\bin\Debug\Cashe.pdb
-E:\Students\Popov\Caсhe\UnitTestCashe\obj\Debug\UnitTestCashe.csprojResolveAssemblyReference.cache
-E:\Students\Popov\Caсhe\UnitTestCashe\obj\Debug\UnitTestCashe.dll
-E:\Students\Popov\Caсhe\UnitTestCashe\obj\Debug\UnitTestCashe.pdb

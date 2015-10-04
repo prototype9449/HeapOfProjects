@@ -1,6 +1,0 @@
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\bin\WebApplication1.dll
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\bin\WebApplication1.pdb
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
-E:\MyRepozitoryGitHub\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
